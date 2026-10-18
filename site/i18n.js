@@ -14,7 +14,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Backup della configurazione e log delle sessioni",
+    "hero.news": "Riconnessione automatica quando cade la rete",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Cuore in Rust, SSH in puro Rust.",
@@ -62,8 +62,8 @@ window.TD_I18N = {
     "m.snip.d": "Comandi salvati scritti nel terminale con <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd>, eventualmente limitati a un gruppo.",
     "m.wait.t": "Schede che ti aspettano",
     "m.wait.d": "Una scheda in attesa di password o chiave host mostra un lucchetto finché non la apri.",
-    "m.reconnect.t": "Riconnessione con Invio",
-    "m.reconnect.d": "Quando una sessione finisce, premi Invio nella sua scheda per ricollegarti.",
+    "m.reconnect.t": "Riconnessione automatica",
+    "m.reconnect.d": "Se cade la rete, il terminale si ricollega da solo; <kbd>Invio</kbd> riprova subito, <kbd>Esc</kbd> si ferma.",
     "m.backup.t": "Backup e ripristino",
     "m.backup.d": "Esporta connessioni, preferiti, layout, snippet e impostazioni in un solo file; mai password o chiavi.",
     "m.log.t": "Log della sessione",
@@ -86,7 +86,7 @@ window.TD_I18N = {
     "sc.upd.d": "Gli aggiornamenti sono verificati con una chiave integrata nell'app, mai declassati. La CI esegue <code>cargo audit</code>, <code>npm audit</code> e test end-to-end contro OpenSSH.",
 
     "sc.chan.t": "Niente iniziative dal server",
-    "sc.chan.d": "I canali che il server prova ad aprire di sua iniziativa (X11, agent, sessioni, connessioni dirette) vengono rifiutati, e i link che stampa nel terminale non vengono mai aperti.",
+    "sc.chan.d": "I canali che il server prova ad aprire di sua iniziativa (X11, agent, sessioni, connessioni dirette) vengono rifiutati, i link che stampa nel terminale non vengono mai aperti e i file scaricati sono marcati, così SmartScreen o Gatekeeper li controllano prima che vengano eseguiti.",
     "sc.paste.t": "Incolla sicuro, richieste al momento giusto",
     "sc.paste.d": "Il testo incollato perde i caratteri di controllo, incollare più righe chiede prima conferma, e la richiesta di password di una scheda in background aspetta che tu la guardi.",
 
