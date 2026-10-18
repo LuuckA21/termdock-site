@@ -70,8 +70,8 @@
     <!-- ───────────── Hero ───────────── -->
     <section class="hero" id="top">
       <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
-        <span class="pill-tag" id="news-version">v0.11</span>
-        <span data-i18n="hero.news">Latest release: see what's new</span>
+        <span class="pill-tag" id="news-version">v0.12</span>
+        <span data-i18n="hero.news">Security hardening release: see what's new</span>
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
@@ -93,7 +93,7 @@
         </a>
       </div>
       <p class="hero-meta reveal">
-        <span id="hero-version">v0.11.0</span>
+        <span id="hero-version">v0.12.0</span>
         <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
         <span class="dot"></span><span>MIT</span>
         <span class="dot"></span><span>Windows · macOS · Linux</span>
@@ -264,7 +264,7 @@
         <header class="section-head left reveal">
           <p class="eyebrow" data-i18n="sec.eyebrow">Security</p>
           <h2 data-i18n="sec.title">Paranoid by default.</h2>
-          <p class="lead" data-i18n="sec.lead">SSH implemented in memory-safe Rust: no external <code>ssh</code> process, no intermediate shell, no secrets on disk. Only modern cryptography makes it into the handshake.</p>
+          <p class="lead" data-i18n="sec.lead">SSH implemented in memory-safe Rust: no external <code>ssh</code> process, no intermediate shell, no secrets on disk. Modern cryptography first, legacy algorithms left out, and the server treated as untrusted.</p>
           <a class="link-arrow" href="https://github.com/LuuckA21/termdock/blob/main/SECURITY.md" rel="noopener" data-i18n="sec.more">Read the threat model</a>
         </header>
 
@@ -275,9 +275,11 @@
             <li><span class="hs-k">kex</span><span class="hs-v">curve25519-sha256</span><span class="hs-tag">fallback</span></li>
             <li><span class="hs-k">cipher</span><span class="hs-v">chacha20-poly1305</span><span class="hs-tag">AEAD</span></li>
             <li><span class="hs-k">cipher</span><span class="hs-v">aes256-gcm</span><span class="hs-tag">AEAD</span></li>
+            <li><span class="hs-k">cipher</span><span class="hs-v">aes256-ctr</span><span class="hs-tag">fallback</span></li>
             <li><span class="hs-k">mac</span><span class="hs-v">hmac-sha2-256-etm</span><span class="hs-tag">EtM</span></li>
             <li><span class="hs-k">strict</span><span class="hs-v">kex-strict</span><span class="hs-tag">Terrapin</span></li>
             <li><span class="hs-k">hostkey</span><span class="hs-v">SHA256:k3Vq…9xWc</span><span class="hs-tag ok">verified</span></li>
+            <li><span class="hs-k">rsa</span><span class="hs-v">rsa-sha2-512</span><span class="hs-tag">never SHA-1</span></li>
             <li class="no"><span class="hs-k">excluded</span><span class="hs-v"><s>ssh-rsa</s> <s>SHA-1</s> <s>CBC</s> <s>DSA</s> <s>zlib</s></span></li>
           </ol>
         </div>
@@ -304,6 +306,16 @@
           <h3 data-i18n="sc.upd.t">Signed, audited releases</h3>
           <p data-i18n="sc.upd.d">Updates are verified against a key built into the app, never downgraded. CI runs <code>cargo audit</code>, <code>npm audit</code> and end-to-end tests against OpenSSH.</p>
         </article>
+        <article class="mini-card spot reveal">
+          <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
+          <h3 data-i18n="sc.chan.t">The server can't reach back</h3>
+          <p data-i18n="sc.chan.d">Channels the server tries to open on its own (X11, agent, sessions, direct connections) are refused, and links it prints in the terminal are never opened.</p>
+        </article>
+        <article class="mini-card spot reveal">
+          <svg class="i" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+          <h3 data-i18n="sc.paste.t">Safe paste, focused prompts</h3>
+          <p data-i18n="sc.paste.d">Pasted text loses control characters, multi-line pastes ask first, and a password prompt from a background tab waits until you look at it.</p>
+        </article>
       </div>
     </section>
 
@@ -329,7 +341,7 @@
         <div class="key-row" data-combo="alt+arrow"><span class="combo"><kbd>Alt</kbd><kbd>←↑→↓</kbd></span><span data-i18n="k.alt">Move between panes</span></div>
         <div class="key-row" data-combo="ctrl+comma"><span class="combo"><kbd>Ctrl</kbd><kbd>,</kbd></span><span data-i18n="k.set">Settings</span></div>
       </div>
-      <p class="note reveal" data-i18n="keys.note"><kbd>Cmd</kbd> works in place of <kbd>Ctrl</kbd> on macOS.</p>
+      <p class="note reveal" data-i18n="keys.note">On macOS <kbd>Cmd</kbd> works in place of <kbd>Ctrl</kbd>, and tabs are <kbd>Cmd</kbd><kbd>1…9</kbd>.</p>
     </section>
 
     <!-- ───────────── Download ───────────── -->
@@ -337,7 +349,7 @@
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
         <h2 data-i18n="dl.title">Get Termdock</h2>
-        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.11.0</span></p>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.12.0</span></p>
       </header>
 
       <div class="dl-grid">
@@ -367,7 +379,7 @@
             <svg viewBox="0 0 24 24" class="i-fill"><path d="M12.5 2c-2.3 0-3.6 1.9-3.5 4.6.04 1.2.2 2.1-.6 3.4-.9 1.5-2.6 3.5-2.9 6-.13 1 .08 1.9.6 2.5-.5.4-1.3.6-1.6 1.2-.3.7.5 1.5 2 1.8 1.4.3 2.6 1 3.5.9.9-.1 1.4-.8 1.6-1.3.8.1 1.8.1 2.8 0 .2.6.8 1.3 1.9 1.3 1.2 0 2.2-1.1 3.6-1.8 1.2-.6 1.6-1.5.9-2.2-.3-.3-.6-.4-.9-.6.6-.9.7-2.3.2-3.8-.6-1.8-1.9-3.4-2.7-4.5-.8-1.1-.6-2.6-.7-4.2C15.9 3.4 14.6 2 12.5 2Zm-1.4 4.1c.4 0 .7.5.7 1.1 0 .3-.1.5-.2.7l-.4-.1c.1-.1.2-.3.2-.6 0-.4-.2-.6-.4-.6s-.4.3-.4.7v.2l-.4-.2v-.1c0-.6.4-1.1.9-1.1Zm2.6 0c.6 0 1 .6 1 1.2 0 .2 0 .4-.1.5l-.3-.1h-.2c.1-.1.1-.2.1-.4 0-.5-.2-.8-.5-.8s-.5.4-.5.8v.1l-.5-.1v-.1c0-.6.4-1.1 1-1.1Zm-1.2 2c.4 0 1 .2 1.6.5.4.2.6.3.6.5s-.4.5-1 .8c-.5.3-.8.5-1.2.5-.4 0-.7-.2-1-.4-.2-.1-.4-.3-.6-.4-.3-.2-.3-.3-.2-.5.1-.1.3-.3.6-.5.3-.2.7-.5 1.2-.5Z"/></svg>
             <h3>Linux</h3><span class="rec" data-i18n="dl.rec">Recommended for you</span>
           </div>
-          <p class="dl-sub">x86_64 · AppImage · deb · rpm</p>
+          <p class="dl-sub" data-i18n="dl.linux.sub">x86_64 · Ubuntu 24.04 or newer (glibc 2.39)</p>
           <div class="dl-links">
             <a class="btn btn-primary" data-asset="amd64.AppImage" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span>AppImage</span><small>.AppImage</small></a>
             <a class="btn btn-ghost" data-asset="amd64.deb" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span>Debian/Ubuntu</span><small>.deb</small></a>
@@ -379,13 +391,13 @@
       <div class="build reveal">
         <div>
           <h3 data-i18n="dl.src.t">Prefer to build it yourself?</h3>
-          <p data-i18n="dl.src.d">You need stable Rust, Node.js 22+ and the Tauri prerequisites for your system.</p>
+          <p data-i18n="dl.src.d">You need stable Rust, Node.js 22+ and the Tauri prerequisites for your system. <code>--no-sign</code> skips the update signature, which needs the project's key.</p>
           <a class="link-arrow" href="https://github.com/LuuckA21/termdock/releases" rel="noopener" data-i18n="dl.all">All releases and checksums</a>
         </div>
         <div class="snippet">
           <pre id="build-cmd"><span class="p">$</span> git clone https://github.com/LuuckA21/termdock
 <span class="p">$</span> cd termdock &amp;&amp; npm ci
-<span class="p">$</span> npm run tauri build</pre>
+<span class="p">$</span> npm run tauri build -- --no-sign</pre>
           <button class="copy" type="button" data-copy="build-cmd" aria-label="Copy commands" data-i18n-attr="aria-label:copy">
             <svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
           </button>

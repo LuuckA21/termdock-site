@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "fddf247"], ["", " Full review: security, correctness, dead code (0.12.0)"]],
           [["t-yellow", "9752742"], ["", " Customisable keyboard shortcuts in Settings (0.11.0)"]],
           [["t-yellow", "fd7c6b5"], ["", " Settings in tabs, larger (0.10.1)"]],
-          [["t-yellow", "a60f026"], ["", " Edit: choose the editor in Settings (0.10.0)"]],
         ],
       },
       { cmd: "echo $SHELL" },
@@ -714,10 +714,13 @@
 
   // ───────────── Shortcuts ─────────────
 
+  const isMac = os === "mac";
+
   function comboOf(e) {
     const ctrl = e.ctrlKey || e.metaKey;
     if (ctrl && e.shiftKey && /^Digit[1-9]$/.test(e.code)) return "ctrl+shift+digit";
     if (e.altKey && !ctrl && /^Digit[1-9]$/.test(e.code)) return "alt+digit";
+    if (isMac && e.metaKey && !e.shiftKey && !e.altKey && /^Digit[1-9]$/.test(e.code)) return "alt+digit";
     if (e.altKey && !ctrl && e.key.startsWith("Arrow")) return "alt+arrow";
     if (ctrl && !e.shiftKey && e.key === ",") return "ctrl+comma";
     if (ctrl && e.shiftKey && /^Key[A-Z]$/.test(e.code)) return `ctrl+shift+${e.code.slice(3).toLowerCase()}`;

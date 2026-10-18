@@ -1651,10 +1651,12 @@ kbd {
 .handshake.in .hs-lines li:nth-child(6) { transition-delay: 0.6s; }
 .handshake.in .hs-lines li:nth-child(7) { transition-delay: 0.72s; }
 .handshake.in .hs-lines li:nth-child(8) { transition-delay: 0.84s; }
+.handshake.in .hs-lines li:nth-child(9) { transition-delay: 0.96s; }
+.handshake.in .hs-lines li:nth-child(10) { transition-delay: 1.08s; }
 
 .sec-cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 56px;
 }

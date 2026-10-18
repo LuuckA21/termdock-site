@@ -14,7 +14,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Ultima release: scopri le novità",
+    "hero.news": "Release di rafforzamento della sicurezza: scopri le novità",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Scritto in puro Rust.",
@@ -61,7 +61,7 @@ window.TD_I18N = {
 
     "sec.eyebrow": "Sicurezza",
     "sec.title": "Paranoico per scelta.",
-    "sec.lead": "SSH implementato in Rust, sicuro per la memoria: nessun processo <code>ssh</code> esterno, nessuna shell intermedia, nessun segreto su disco. Nell'handshake entra solo crittografia moderna.",
+    "sec.lead": "SSH implementato in Rust, sicuro per la memoria: nessun processo <code>ssh</code> esterno, nessuna shell intermedia, nessun segreto su disco. Prima la crittografia moderna, fuori gli algoritmi obsoleti, e il server trattato come non affidabile.",
     "sec.more": "Leggi il modello delle minacce",
     "sec.hs": "Riepilogo dell'handshake SSH",
     "sc.hk.t": "Chiavi host, verificate prima",
@@ -73,10 +73,15 @@ window.TD_I18N = {
     "sc.upd.t": "Release firmate e verificate",
     "sc.upd.d": "Gli aggiornamenti sono verificati con una chiave integrata nell'app, mai declassati. La CI esegue <code>cargo audit</code>, <code>npm audit</code> e test end-to-end contro OpenSSH.",
 
+    "sc.chan.t": "Il server non può rientrare",
+    "sc.chan.d": "I canali che il server prova ad aprire di sua iniziativa (X11, agent, sessioni, connessioni dirette) vengono rifiutati, e i link che stampa nel terminale non vengono mai aperti.",
+    "sc.paste.t": "Incolla sicuro, richieste al posto giusto",
+    "sc.paste.d": "Il testo incollato perde i caratteri di controllo, incollare più righe chiede prima conferma, e la richiesta di password di una scheda in background aspetta che tu la guardi.",
+
     "keys.eyebrow": "Prima la tastiera",
     "keys.title": "Le mani restano sui tasti.",
     "keys.lead": "Premi una combinazione sulla tastiera e guarda cosa fa. Ogni scorciatoia si può cambiare o disattivare nelle Impostazioni.",
-    "keys.note": "Su macOS <kbd>Cmd</kbd> funziona al posto di <kbd>Ctrl</kbd>.",
+    "keys.note": "Su macOS <kbd>Cmd</kbd> funziona al posto di <kbd>Ctrl</kbd>, e le schede sono <kbd>Cmd</kbd><kbd>1…9</kbd>.",
     "k.t": "Nuova shell locale",
     "k.k": "Connessione rapida",
     "k.e": "Dividi il pannello a destra",
@@ -94,10 +99,11 @@ window.TD_I18N = {
     "dl.title": "Scarica Termdock",
     "dl.lead": "Gratuito, open source, e si aggiorna da solo.",
     "dl.rec": "Consigliato per te",
+    "dl.linux.sub": "x86_64 · Ubuntu 24.04 o più recente (glibc 2.39)",
     "dl.win.exe": "Installer",
     "dl.mac.dmg": "Immagine disco",
     "dl.src.t": "Preferisci compilarlo da te?",
-    "dl.src.d": "Servono Rust stabile, Node.js 22+ e i prerequisiti di Tauri per il tuo sistema.",
+    "dl.src.d": "Servono Rust stabile, Node.js 22+ e i prerequisiti di Tauri per il tuo sistema. <code>--no-sign</code> salta la firma degli aggiornamenti, che richiede la chiave del progetto.",
     "dl.all": "Tutte le release e le firme",
     "copy": "Copia i comandi",
 
