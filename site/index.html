@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Termdock: terminal &amp; SSH connection manager</title>
+  <meta name="description" content="Termdock is a fast, secure terminal and SSH connection manager for Windows, macOS and Linux, with a favorites bar, split panes, SFTP, jump hosts and port forwarding. Free and open source.">
+  <meta name="theme-color" content="#07090f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Termdock: your servers, one click away">
+  <meta property="og:description" content="Terminal and SSH connection manager for Windows, macOS and Linux. Favorites bar, split panes, SFTP, jump hosts, port forwarding. Pure Rust, open source.">
+  <meta property="og:url" content="https://luucka21.github.io/termdock-site/">
+  <meta property="og:image" content="https://luucka21.github.io/termdock-site/assets/screenshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://luucka21.github.io/termdock-site/">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+  <script src="i18n.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <div class="backdrop" aria-hidden="true">
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="aurora a3"></div>
+    <div class="grid-lines"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- ───────────── Navigation ───────────── -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top" aria-label="Termdock home">
+        <img src="assets/icon.svg" alt="" width="28" height="28">
+        <span>termdock</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" data-i18n="nav.features">Features</a></li>
+        <li><a href="#security" data-i18n="nav.security">Security</a></li>
+        <li><a href="#shortcuts" data-i18n="nav.shortcuts">Shortcuts</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn lang-btn" id="lang-toggle" type="button" aria-label="Switch language" data-i18n-attr="aria-label:nav.lang">
+          <span class="lang-opt" data-lang="en">EN</span><span class="lang-opt" data-lang="it">IT</span>
+        </button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark theme" data-i18n-attr="aria-label:nav.theme">
+          <svg class="i i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="i i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <a class="icon-btn gh" href="https://github.com/LuuckA21/termdock" rel="noopener" aria-label="Termdock on GitHub">
+          <svg viewBox="0 0 24 24" class="i-fill"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+          <span class="stars" id="gh-stars" hidden></span>
+        </a>
+        <a class="btn btn-sm btn-primary nav-cta" href="#download" data-i18n="nav.download">Download</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ───────────── Hero ───────────── -->
+    <section class="hero" id="top">
+      <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
+        <span class="pill-tag" id="news-version">v0.11</span>
+        <span data-i18n="hero.news">Latest release: see what's new</span>
+        <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <h1 class="hero-title reveal">
+        <span data-i18n="hero.title1">Every server you love,</span>
+        <span class="grad" data-i18n="hero.title2">one click away.</span>
+      </h1>
+
+      <p class="hero-sub reveal" data-i18n="hero.sub">A fast, secure terminal and SSH connection manager for Windows, macOS and Linux. Pin connections to the favorites bar, split panes, browse files over SFTP, hop through bastions. Built in pure Rust.</p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary btn-lg" href="#download" id="hero-download">
+          <span class="os-icon" id="hero-os-icon" aria-hidden="true"></span>
+          <span id="hero-download-label" data-i18n="hero.download">Download for free</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/LuuckA21/termdock" rel="noopener">
+          <svg viewBox="0 0 24 24" class="i"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <span data-i18n="hero.source">View source</span>
+        </a>
+      </div>
+      <p class="hero-meta reveal">
+        <span id="hero-version">v0.11.0</span>
+        <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
+        <span class="dot"></span><span>MIT</span>
+        <span class="dot"></span><span>Windows · macOS · Linux</span>
+      </p>
+
+      <!-- Interactive replica of the app -->
+      <div class="stage">
+        <div class="window" id="demo" role="region" aria-label="Interactive Termdock demo" data-i18n-attr="aria-label:demo.label">
+          <div class="win-titlebar">
+            <span class="traffic"><i></i><i></i><i></i></span>
+            <span class="win-title">Termdock</span>
+            <span class="win-hint" data-i18n="demo.hint">Try it: click a favorite</span>
+          </div>
+          <div class="favbar">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <div class="favs" id="favs">
+              <button class="fav c-green" data-session="test-sshd"><span class="led"></span><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></svg>test-sshd</button>
+              <button class="fav c-red" data-session="prod-web-01"><span class="led"></span><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></svg>prod-web-01</button>
+              <button class="fav c-yellow" data-session="db-primary"><span class="led"></span><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></svg>db-primary</button>
+              <button class="fav c-blue" data-session="local"><span class="led"></span><svg class="i" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></svg>zsh</button>
+              <button class="fav c-magenta" data-session="router"><span class="led"></span><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></svg>edge-router</button>
+            </div>
+            <form class="quick" id="quick" autocomplete="off">
+              <svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <input id="quick-input" type="text" spellcheck="false" placeholder="user@host:port" aria-label="Quick connect" data-i18n-attr="aria-label:demo.quick">
+            </form>
+          </div>
+          <div class="tabbar" id="tabs" role="tablist"></div>
+          <div class="term" id="term" aria-live="off"></div>
+        </div>
+        <div class="stage-glow" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ───────────── Platforms strip ───────────── -->
+    <section class="strip reveal" aria-label="Highlights">
+      <div class="strip-track">
+        <span>Rust + russh</span><span>Tauri 2</span><span>xterm.js</span><span>mlkem768x25519</span><span>SFTP</span><span>ProxyJump</span><span>SOCKS5</span><span>ConPTY</span><span>Ed25519</span><span>OS keychain</span>
+        <span aria-hidden="true">Rust + russh</span><span aria-hidden="true">Tauri 2</span><span aria-hidden="true">xterm.js</span><span aria-hidden="true">mlkem768x25519</span><span aria-hidden="true">SFTP</span><span aria-hidden="true">ProxyJump</span><span aria-hidden="true">SOCKS5</span><span aria-hidden="true">ConPTY</span><span aria-hidden="true">Ed25519</span><span aria-hidden="true">OS keychain</span>
+      </div>
+    </section>
+
+    <!-- ───────────── Features ───────────── -->
+    <section class="section" id="features">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="features.eyebrow">Features</p>
+        <h2 data-i18n="features.title">Everything a terminal should do. Nothing it shouldn't.</h2>
+        <p class="lead" data-i18n="features.lead">Termdock keeps the connections you use every day one click away, and gets out of the way once you're in.</p>
+      </header>
+
+      <div class="bento">
+        <!-- Favorites -->
+        <article class="card c-wide spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <h3 data-i18n="f.fav.title">Favorites bar</h3>
+            <p data-i18n="f.fav.text">Always visible. One click opens a connection in a new tab; drag to reorder, right-click to edit, <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>1…9</kbd> opens the first nine.</p>
+          </div>
+          <div class="viz viz-fav" aria-hidden="true">
+            <div class="mini-fav c-green"><span></span>test-sshd<kbd>1</kbd></div>
+            <div class="mini-fav c-red"><span></span>prod-web-01<kbd>2</kbd></div>
+            <div class="mini-fav c-yellow"><span></span>db-primary<kbd>3</kbd></div>
+            <div class="mini-fav c-magenta"><span></span>edge-router<kbd>4</kbd></div>
+            <div class="mini-cursor"></div>
+          </div>
+        </article>
+
+        <!-- Split panes -->
+        <article class="card spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M12 12h9"/></svg></span>
+            <h3 data-i18n="f.split.title">Split panes</h3>
+            <p data-i18n="f.split.text">Server A on the left, server B on the right. Split as often as you like, drag dividers, jump with <kbd>Alt</kbd><kbd>←↑→↓</kbd>.</p>
+          </div>
+          <div class="viz viz-split" aria-hidden="true">
+            <div class="pane p1"><i></i><i></i><i></i></div>
+            <div class="pane p2"><i></i><i></i></div>
+            <div class="pane p3"><i></i><i></i><i></i></div>
+          </div>
+        </article>
+
+        <!-- SFTP -->
+        <article class="card spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
+            <h3 data-i18n="f.sftp.title">SFTP file browser</h3>
+            <p data-i18n="f.sftp.text">Files next to the terminal, on the same connection: no second login. Drag &amp; drop uploads, follow <code>cd</code>, edit remote files with <kbd>F4</kbd>, even as another user after <code>sudo -iu</code>.</p>
+          </div>
+          <div class="viz viz-files" aria-hidden="true">
+            <div class="frow"><span class="fi dir"></span>/var/www<em>drwxr-xr-x</em></div>
+            <div class="frow"><span class="fi dir"></span>nginx/<em>drwxr-xr-x</em></div>
+            <div class="frow active"><span class="fi"></span>site.conf<em>2.1 KB</em></div>
+            <div class="frow up"><span class="fi"></span>release.tar.gz<em class="bar"><b></b></em></div>
+          </div>
+        </article>
+
+        <!-- Jump hosts -->
+        <article class="card c-wide spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/></svg></span>
+            <h3 data-i18n="f.jump.title">Jump hosts &amp; port forwarding</h3>
+            <p data-i18n="f.jump.text">Reach private networks through a bastion, or a whole chain of them; every hop verifies its own host key. Save local <code>-L</code>, remote <code>-R</code> and dynamic SOCKS5 <code>-D</code> tunnels with the connection.</p>
+          </div>
+          <div class="viz viz-jump" aria-hidden="true">
+            <div class="node"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span data-i18n="f.jump.you">you</span></div>
+            <div class="link"><b></b></div>
+            <div class="node"><svg class="i" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>bastion</span><em class="ok">✓ key</em></div>
+            <div class="link"><b></b></div>
+            <div class="node"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></svg><span>db-primary</span><em class="ok">✓ key</em></div>
+            <div class="tunnels">
+              <span><b>-L</b> 5432 → db:5432</span>
+              <span><b>-R</b> 8080 ← :3000</span>
+              <span><b>-D</b> SOCKS5 :1080</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Local shells -->
+        <article class="card spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></svg></span>
+            <h3 data-i18n="f.local.title">Local shells, real PTY</h3>
+            <p data-i18n="f.local.text">PowerShell, cmd, WSL and Git Bash on Windows via ConPTY; bash, zsh, fish and pwsh on macOS and Linux.</p>
+          </div>
+          <div class="viz chips" aria-hidden="true">
+            <span>pwsh</span><span>cmd</span><span>WSL</span><span>Git Bash</span><span>bash</span><span>zsh</span><span>fish</span>
+          </div>
+        </article>
+
+        <!-- Import -->
+        <article class="card spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
+            <h3 data-i18n="f.import.title">Import ~/.ssh/config</h3>
+            <p data-i18n="f.import.text">Preview with warnings, then bring in hosts, users, keys, jump hosts and forwards in one go.</p>
+          </div>
+          <pre class="viz code" aria-hidden="true"><span class="k">Host</span> db-primary
+  <span class="k">HostName</span> 10.0.4.12
+  <span class="k">User</span> postgres
+  <span class="k">ProxyJump</span> bastion
+  <span class="k">LocalForward</span> 5432 localhost:5432</pre>
+        </article>
+
+        <!-- Themes (interactive) -->
+        <article class="card spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20 2 2 0 0 0 2-2 2 2 0 0 1 2-2h2a4 4 0 0 0 4-4c0-6-4.5-10-10-10Z"/></svg></span>
+            <h3 data-i18n="f.themes.title">Themes &amp; fonts</h3>
+            <p data-i18n="f.themes.text">Dark, light or system. Pick a color scheme below and watch the terminal above change.</p>
+          </div>
+          <div class="viz schemes" id="schemes" role="radiogroup" aria-label="Terminal color scheme" data-i18n-attr="aria-label:f.themes.group"></div>
+        </article>
+      </div>
+
+      <ul class="minis reveal">
+        <li><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div><strong data-i18n="m.find.t">Find in terminal</strong><span data-i18n="m.find.d">Regex, match case, highlighted results.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/></svg><div><strong data-i18n="m.layouts.t">Saved layouts</strong><span data-i18n="m.layouts.d">Reopen a whole workspace in one click, even at startup.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><div><strong data-i18n="m.quick.t">Quick connect</strong><span data-i18n="m.quick.d">Type <code>user@host:port</code>, press Enter.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg><div><strong data-i18n="m.update.t">Signed auto-updates</strong><span data-i18n="m.update.d">Only after you confirm, verified with Ed25519.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.05 9.5A18 18 0 0 1 6.4 9M12.5 18H19M11 21l5-10 5 10M4 15c2.4-1.2 4.7-3.6 6-6.5"/></svg><div><strong data-i18n="m.i18n.t">English &amp; Italiano</strong><span data-i18n="m.i18n.d">Switch instantly, sessions keep running.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg><div><strong data-i18n="m.keys.t">Your keys, your way</strong><span data-i18n="m.keys.d">Rebind or disable any shortcut.</span></div></li>
+      </ul>
+    </section>
+
+    <!-- ───────────── Security ───────────── -->
+    <section class="section security" id="security">
+      <div class="sec-grid">
+        <header class="section-head left reveal">
+          <p class="eyebrow" data-i18n="sec.eyebrow">Security</p>
+          <h2 data-i18n="sec.title">Paranoid by default.</h2>
+          <p class="lead" data-i18n="sec.lead">SSH implemented in memory-safe Rust: no external <code>ssh</code> process, no intermediate shell, no secrets on disk. Only modern cryptography makes it into the handshake.</p>
+          <a class="link-arrow" href="https://github.com/LuuckA21/termdock/blob/main/SECURITY.md" rel="noopener" data-i18n="sec.more">Read the threat model</a>
+        </header>
+
+        <div class="handshake reveal" aria-label="SSH handshake summary" data-i18n-attr="aria-label:sec.hs">
+          <div class="hs-head"><span class="led ok"></span>handshake · db-primary:22</div>
+          <ol class="hs-lines" id="hs-lines">
+            <li><span class="hs-k">kex</span><span class="hs-v">mlkem768x25519-sha256</span><span class="hs-tag pq">post-quantum</span></li>
+            <li><span class="hs-k">kex</span><span class="hs-v">curve25519-sha256</span><span class="hs-tag">fallback</span></li>
+            <li><span class="hs-k">cipher</span><span class="hs-v">chacha20-poly1305</span><span class="hs-tag">AEAD</span></li>
+            <li><span class="hs-k">cipher</span><span class="hs-v">aes256-gcm</span><span class="hs-tag">AEAD</span></li>
+            <li><span class="hs-k">mac</span><span class="hs-v">hmac-sha2-256-etm</span><span class="hs-tag">EtM</span></li>
+            <li><span class="hs-k">strict</span><span class="hs-v">kex-strict</span><span class="hs-tag">Terrapin</span></li>
+            <li><span class="hs-k">hostkey</span><span class="hs-v">SHA256:k3Vq…9xWc</span><span class="hs-tag ok">verified</span></li>
+            <li class="no"><span class="hs-k">excluded</span><span class="hs-v"><s>ssh-rsa</s> <s>SHA-1</s> <s>CBC</s> <s>DSA</s> <s>zlib</s></span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="sec-cards">
+        <article class="mini-card spot reveal">
+          <svg class="i" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3 data-i18n="sc.hk.t">Host keys, verified first</h3>
+          <p data-i18n="sc.hk.d">The fingerprint is checked before any authentication. A changed key is refused, with no "connect anyway" button.</p>
+        </article>
+        <article class="mini-card spot reveal">
+          <svg class="i" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3 data-i18n="sc.vault.t">Secrets stay in the keychain</h3>
+          <p data-i18n="sc.vault.d">Passwords are saved only if you ask, only in the OS keychain, wiped from memory after use and never sent to the UI.</p>
+        </article>
+        <article class="mini-card spot reveal">
+          <svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18" cy="16" r="3"/></svg>
+          <h3 data-i18n="sc.tauri.t">Least-privilege shell</h3>
+          <p data-i18n="sc.tauri.d">Strict CSP, every IPC command allow-listed, no file system or shell plugins, no <code>innerHTML</code>.</p>
+        </article>
+        <article class="mini-card spot reveal">
+          <svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+          <h3 data-i18n="sc.upd.t">Signed, audited releases</h3>
+          <p data-i18n="sc.upd.d">Updates are verified against a key built into the app, never downgraded. CI runs <code>cargo audit</code>, <code>npm audit</code> and end-to-end tests against OpenSSH.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────── Shortcuts ───────────── -->
+    <section class="section" id="shortcuts">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="keys.eyebrow">Keyboard first</p>
+        <h2 data-i18n="keys.title">Hands stay on the keys.</h2>
+        <p class="lead" data-i18n="keys.lead">Press a combination on your keyboard and see what it does. Every shortcut can be changed or turned off in Settings.</p>
+      </header>
+
+      <div class="keys reveal" id="keys">
+        <div class="key-row" data-combo="ctrl+shift+t"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>T</kbd></span><span data-i18n="k.t">New local shell</span></div>
+        <div class="key-row" data-combo="ctrl+shift+k"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>K</kbd></span><span data-i18n="k.k">Quick connect</span></div>
+        <div class="key-row" data-combo="ctrl+shift+e"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>E</kbd></span><span data-i18n="k.e">Split pane right</span></div>
+        <div class="key-row" data-combo="ctrl+shift+o"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>O</kbd></span><span data-i18n="k.o">Split pane down</span></div>
+        <div class="key-row" data-combo="ctrl+shift+s"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>S</kbd></span><span data-i18n="k.s">SFTP file browser</span></div>
+        <div class="key-row" data-combo="ctrl+shift+f"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>F</kbd></span><span data-i18n="k.f">Find in terminal</span></div>
+        <div class="key-row" data-combo="ctrl+shift+l"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>L</kbd></span><span data-i18n="k.l">Save tab as layout</span></div>
+        <div class="key-row" data-combo="ctrl+shift+m"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>M</kbd></span><span data-i18n="k.m">Connection manager</span></div>
+        <div class="key-row" data-combo="ctrl+shift+digit"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>1…9</kbd></span><span data-i18n="k.fav">Open favorite N</span></div>
+        <div class="key-row" data-combo="alt+digit"><span class="combo"><kbd>Alt</kbd><kbd>1…9</kbd></span><span data-i18n="k.tab">Go to tab N</span></div>
+        <div class="key-row" data-combo="alt+arrow"><span class="combo"><kbd>Alt</kbd><kbd>←↑→↓</kbd></span><span data-i18n="k.alt">Move between panes</span></div>
+        <div class="key-row" data-combo="ctrl+comma"><span class="combo"><kbd>Ctrl</kbd><kbd>,</kbd></span><span data-i18n="k.set">Settings</span></div>
+      </div>
+      <p class="note reveal" data-i18n="keys.note"><kbd>Cmd</kbd> works in place of <kbd>Ctrl</kbd> on macOS.</p>
+    </section>
+
+    <!-- ───────────── Download ───────────── -->
+    <section class="section" id="download">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
+        <h2 data-i18n="dl.title">Get Termdock</h2>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.11.0</span></p>
+      </header>
+
+      <div class="dl-grid">
+        <article class="dl-card spot reveal" data-os="windows">
+          <div class="dl-os">
+            <svg viewBox="0 0 24 24" class="i-fill"><path d="M3 5.1 10.4 4v7.2H3V5.1Zm0 13.8 7.4 1.1v-7.1H3v6Zm8.2 1.2L21 21.5v-8.6h-9.8v7.2Zm0-16.2v7.3H21V2.5l-9.8 1.4Z"/></svg>
+            <h3>Windows</h3><span class="rec" data-i18n="dl.rec">Recommended for you</span>
+          </div>
+          <p class="dl-sub">Windows 10 · 11 · x64</p>
+          <div class="dl-links">
+            <a class="btn btn-primary" data-asset="x64-setup.exe" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span data-i18n="dl.win.exe">Installer</span><small>.exe</small></a>
+            <a class="btn btn-ghost" data-asset="en-US.msi" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span>MSI</span><small>.msi</small></a>
+          </div>
+        </article>
+        <article class="dl-card spot reveal" data-os="mac">
+          <div class="dl-os">
+            <svg viewBox="0 0 24 24" class="i-fill"><path d="M16.37 12.62c-.02-2.2 1.8-3.26 1.88-3.31a4.05 4.05 0 0 0-3.18-1.72c-1.35-.14-2.65.8-3.33.8-.7 0-1.75-.78-2.88-.76a4.26 4.26 0 0 0-3.6 2.19c-1.54 2.67-.39 6.62 1.1 8.79.74 1.06 1.61 2.25 2.75 2.2 1.11-.04 1.53-.71 2.87-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.07 2.66-2.14a9.4 9.4 0 0 0 1.21-2.48 3.84 3.84 0 0 1-2.36-3.55ZM14.2 6.16A3.87 3.87 0 0 0 15.1 3.4a3.95 3.95 0 0 0-2.57 1.33 3.7 3.7 0 0 0-.92 2.67 3.27 3.27 0 0 0 2.58-1.24Z"/></svg>
+            <h3>macOS</h3><span class="rec" data-i18n="dl.rec">Recommended for you</span>
+          </div>
+          <p class="dl-sub">Apple Silicon · Intel (universal)</p>
+          <div class="dl-links">
+            <a class="btn btn-primary" data-asset="universal.dmg" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span data-i18n="dl.mac.dmg">Disk image</span><small>.dmg</small></a>
+          </div>
+        </article>
+        <article class="dl-card spot reveal" data-os="linux">
+          <div class="dl-os">
+            <svg viewBox="0 0 24 24" class="i-fill"><path d="M12.5 2c-2.3 0-3.6 1.9-3.5 4.6.04 1.2.2 2.1-.6 3.4-.9 1.5-2.6 3.5-2.9 6-.13 1 .08 1.9.6 2.5-.5.4-1.3.6-1.6 1.2-.3.7.5 1.5 2 1.8 1.4.3 2.6 1 3.5.9.9-.1 1.4-.8 1.6-1.3.8.1 1.8.1 2.8 0 .2.6.8 1.3 1.9 1.3 1.2 0 2.2-1.1 3.6-1.8 1.2-.6 1.6-1.5.9-2.2-.3-.3-.6-.4-.9-.6.6-.9.7-2.3.2-3.8-.6-1.8-1.9-3.4-2.7-4.5-.8-1.1-.6-2.6-.7-4.2C15.9 3.4 14.6 2 12.5 2Zm-1.4 4.1c.4 0 .7.5.7 1.1 0 .3-.1.5-.2.7l-.4-.1c.1-.1.2-.3.2-.6 0-.4-.2-.6-.4-.6s-.4.3-.4.7v.2l-.4-.2v-.1c0-.6.4-1.1.9-1.1Zm2.6 0c.6 0 1 .6 1 1.2 0 .2 0 .4-.1.5l-.3-.1h-.2c.1-.1.1-.2.1-.4 0-.5-.2-.8-.5-.8s-.5.4-.5.8v.1l-.5-.1v-.1c0-.6.4-1.1 1-1.1Zm-1.2 2c.4 0 1 .2 1.6.5.4.2.6.3.6.5s-.4.5-1 .8c-.5.3-.8.5-1.2.5-.4 0-.7-.2-1-.4-.2-.1-.4-.3-.6-.4-.3-.2-.3-.3-.2-.5.1-.1.3-.3.6-.5.3-.2.7-.5 1.2-.5Z"/></svg>
+            <h3>Linux</h3><span class="rec" data-i18n="dl.rec">Recommended for you</span>
+          </div>
+          <p class="dl-sub">x86_64 · AppImage · deb · rpm</p>
+          <div class="dl-links">
+            <a class="btn btn-primary" data-asset="amd64.AppImage" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span>AppImage</span><small>.AppImage</small></a>
+            <a class="btn btn-ghost" data-asset="amd64.deb" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span>Debian/Ubuntu</span><small>.deb</small></a>
+            <a class="btn btn-ghost" data-asset="x86_64.rpm" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener"><span>Fedora/RHEL</span><small>.rpm</small></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="build reveal">
+        <div>
+          <h3 data-i18n="dl.src.t">Prefer to build it yourself?</h3>
+          <p data-i18n="dl.src.d">You need stable Rust, Node.js 22+ and the Tauri prerequisites for your system.</p>
+          <a class="link-arrow" href="https://github.com/LuuckA21/termdock/releases" rel="noopener" data-i18n="dl.all">All releases and checksums</a>
+        </div>
+        <div class="snippet">
+          <pre id="build-cmd"><span class="p">$</span> git clone https://github.com/LuuckA21/termdock
+<span class="p">$</span> cd termdock &amp;&amp; npm ci
+<span class="p">$</span> npm run tauri build</pre>
+          <button class="copy" type="button" data-copy="build-cmd" aria-label="Copy commands" data-i18n-attr="aria-label:copy">
+            <svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── FAQ ───────────── -->
+    <section class="section faq" id="faq">
+      <header class="section-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 data-i18n="faq.title">Good questions.</h2>
+      </header>
+      <div class="faq-list reveal">
+        <details>
+          <summary data-i18n="faq.q1">Is Termdock really free?</summary>
+          <p data-i18n="faq.a1">Yes. It is open source under the MIT license, with no account, no telemetry and no paid tier.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">Where are my passwords stored?</summary>
+          <p data-i18n="faq.a2">Nowhere, unless you ask. If you choose to remember one, it goes into your operating system's keychain (Windows Credential Manager, macOS Keychain or Secret Service on Linux), never into a file. Changing a connection's host, port, user or authentication method deletes it.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">Can I use my existing SSH keys, agent and config?</summary>
+          <p data-i18n="faq.a3">Yes. Termdock works with ssh-agent, the Windows OpenSSH agent and Pageant, reads encrypted private keys and your <code>~/.ssh/known_hosts</code>, and imports connections from <code>~/.ssh/config</code> with a preview first.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q4">How do updates work?</summary>
+          <p data-i18n="faq.a4">At start and once a day Termdock checks for a new version, and installs it only after you confirm. Every package is verified against the signing key built into the app and must be signed for the version it claims, so tampered or older packages are rejected. You can turn the check off in Settings. deb and rpm installs are just notified, so your package manager stays in charge.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q5">Does it replace PuTTY or Windows Terminal?</summary>
+          <p data-i18n="faq.a5">It covers both jobs: a modern terminal for local shells (PowerShell, cmd, WSL, Git Bash, bash, zsh…) and a connection manager for SSH with favorites, SFTP, tunnels and jump hosts, in the same window.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ───────────── Final CTA ───────────── -->
+    <section class="final reveal">
+      <img src="assets/icon.svg" alt="" width="88" height="88" class="final-icon">
+      <h2 data-i18n="final.title">Dock your servers.</h2>
+      <p data-i18n="final.text">Set up your favorites once, then every connection is a single click away.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#download" data-i18n="final.cta">Download Termdock</a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/LuuckA21/termdock" rel="noopener" data-i18n="final.star">Star on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="assets/icon.svg" alt="" width="24" height="24"><span>termdock</span></a>
+        <p data-i18n="foot.tag">Terminal &amp; SSH connection manager for Windows, macOS and Linux.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://github.com/LuuckA21/termdock" rel="noopener">GitHub</a>
+        <a href="https://github.com/LuuckA21/termdock/releases" rel="noopener" data-i18n="foot.releases">Releases</a>
+        <a href="https://github.com/LuuckA21/termdock/blob/main/CHANGELOG.md" rel="noopener" id="foot-changelog">Changelog</a>
+        <a href="https://github.com/LuuckA21/termdock/blob/main/SECURITY.md" rel="noopener" id="foot-security" data-i18n="foot.security">Security</a>
+        <a href="https://github.com/LuuckA21/termdock/issues" rel="noopener" data-i18n="foot.issues">Report an issue</a>
+      </nav>
+    </div>
+    <p class="foot-legal"><span>© 2026 Luca Dalù</span> · <span data-i18n="foot.license">Released under the MIT license.</span></p>
+    <div class="wordmark" aria-hidden="true">termdock</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
