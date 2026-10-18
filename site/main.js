@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "dc4b712"], ["", " Folder uploads and downloads with a transfer queue (0.13.0)"]],
+          [["t-yellow", "3e6402c"], ["", " Blocking work off the runtime, tab waiting mark (0.12.1)"]],
           [["t-yellow", "fddf247"], ["", " Full review: security, correctness, dead code (0.12.0)"]],
-          [["t-yellow", "9752742"], ["", " Customisable keyboard shortcuts in Settings (0.11.0)"]],
-          [["t-yellow", "fd7c6b5"], ["", " Settings in tabs, larger (0.10.1)"]],
         ],
       },
       { cmd: "echo $SHELL" },

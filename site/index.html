@@ -70,8 +70,8 @@
     <!-- ───────────── Hero ───────────── -->
     <section class="hero" id="top">
       <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
-        <span class="pill-tag" id="news-version">v0.12</span>
-        <span data-i18n="hero.news">Security hardening release: see what's new</span>
+        <span class="pill-tag" id="news-version">v0.13</span>
+        <span data-i18n="hero.news">Whole-folder transfers with a queue: see what's new</span>
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
@@ -93,7 +93,7 @@
         </a>
       </div>
       <p class="hero-meta reveal">
-        <span id="hero-version">v0.12.0</span>
+        <span id="hero-version">v0.13.0</span>
         <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
         <span class="dot"></span><span>MIT</span>
         <span class="dot"></span><span>Windows · macOS · Linux</span>
@@ -180,13 +180,16 @@
           <div class="card-body">
             <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
             <h3 data-i18n="f.sftp.title">SFTP file browser</h3>
-            <p data-i18n="f.sftp.text">Files next to the terminal, on the same connection: no second login. Drag &amp; drop uploads, follow <code>cd</code>, edit remote files with <kbd>F4</kbd>, even as another user after <code>sudo -iu</code>.</p>
+            <p data-i18n="f.sftp.text">Files next to the terminal, on the same connection: no second login. Upload and download whole folders through a transfer queue, drag &amp; drop, follow <code>cd</code>, edit remote files with <kbd>F4</kbd>, even as another user after <code>sudo -iu</code>.</p>
           </div>
           <div class="viz viz-files" aria-hidden="true">
             <div class="frow"><span class="fi dir"></span>/var/www<em>drwxr-xr-x</em></div>
-            <div class="frow"><span class="fi dir"></span>nginx/<em>drwxr-xr-x</em></div>
-            <div class="frow active"><span class="fi"></span>site.conf<em>2.1 KB</em></div>
-            <div class="frow up"><span class="fi"></span>release.tar.gz<em class="bar"><b></b></em></div>
+            <div class="frow active"><span class="fi dir"></span>assets/<em>drwxr-xr-x</em></div>
+            <div class="frow"><span class="fi"></span>site.conf<em>2.1 KB</em></div>
+            <div class="fqueue">
+              <div class="frow up"><span class="dir-arrow">↑</span>assets/ · 128<em class="bar"><b></b></em><span class="qx">×</span></div>
+              <div class="frow done"><span class="dir-arrow">↓</span>logs/ · 42<em>✓ 12 MB</em></div>
+            </div>
           </div>
         </article>
 
@@ -349,7 +352,7 @@
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
         <h2 data-i18n="dl.title">Get Termdock</h2>
-        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.12.0</span></p>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.13.0</span></p>
       </header>
 
       <div class="dl-grid">
