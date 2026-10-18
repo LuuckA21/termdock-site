@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "ba544da"], ["", " Snippets, and Linux packages built in Ubuntu 22.04 (0.14.0)"]],
           [["t-yellow", "dc4b712"], ["", " Folder uploads and downloads with a transfer queue (0.13.0)"]],
           [["t-yellow", "3e6402c"], ["", " Blocking work off the runtime, tab waiting mark (0.12.1)"]],
-          [["t-yellow", "fddf247"], ["", " Full review: security, correctness, dead code (0.12.0)"]],
         ],
       },
       { cmd: "echo $SHELL" },
@@ -541,7 +541,7 @@
       case "":
         break;
       case "help":
-        out(lang() === "it" ? "Comandi: help, ls, whoami, hostname, date, echo, uname, clear, exit" : "Commands: help, ls, whoami, hostname, date, echo, uname, clear, exit", "t-dim");
+        out(lang() === "it" ? "Comandi: help, ls, whoami, hostname, date, uptime, echo, uname, clear, exit" : "Commands: help, ls, whoami, hostname, date, uptime, echo, uname, clear, exit", "t-dim");
         break;
       case "clear":
         tab.view.textContent = "";
@@ -551,6 +551,9 @@
         break;
       case "hostname":
         out(s.local ? "localhost" : s.host);
+        break;
+      case "uptime":
+        out(" 10:42:07 up 41 days,  2:28,  1 user,  load average: 0.08, 0.11, 0.09");
         break;
       case "date":
         out(new Date().toString());
@@ -580,6 +583,20 @@
         out(`${s.local ? "zsh" : "bash"}: ${name}: command not found`);
     }
     promptLine(tab);
+  }
+
+  // Ctrl+Shift+P in the demo types a saved snippet, like the app's Snippets menu.
+  async function runSnippet() {
+    const tab = active;
+    if (!tab || !tab.idle || !tab.input || tab.closed) return;
+    tab.idle = false;
+    await typeInto(tab, "uptime");
+    await sleep(200);
+    if (tab.dead || !tab.input) return;
+    const cmd = tab.input.textContent;
+    tab.input = null;
+    tab.idle = true;
+    execute(tab, cmd);
   }
 
   function openTab(sessionId, custom) {
@@ -757,6 +774,7 @@
     flash(row);
     // Mirror a few actions in the demo window.
     if (combo === "ctrl+shift+t") openTab("local");
+    else if (combo === "ctrl+shift+p") runSnippet();
     else if (combo === "ctrl+shift+k") $("#quick-input").focus({ preventScroll: true });
     else if (combo === "ctrl+shift+digit") {
       const fav = $$(".fav")[Number(e.code.slice(5)) - 1];
