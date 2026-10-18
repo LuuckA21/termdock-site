@@ -70,8 +70,8 @@
     <!-- ───────────── Hero ───────────── -->
     <section class="hero" id="top">
       <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
-        <span class="pill-tag" id="news-version">v0.14</span>
-        <span data-i18n="hero.news">Snippets: saved commands one shortcut away</span>
+        <span class="pill-tag" id="news-version">v0.15</span>
+        <span data-i18n="hero.news">Configuration backup and session logs</span>
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
@@ -93,7 +93,7 @@
         </a>
       </div>
       <p class="hero-meta reveal">
-        <span id="hero-version">v0.14.0</span>
+        <span id="hero-version">v0.15.0</span>
         <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
         <span class="dot"></span><span>MIT</span>
         <span class="dot"></span><span>Windows · macOS · Linux</span>
@@ -261,6 +261,9 @@
         <li><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><path d="m15 15 3 3 3-3"/></svg><div><strong data-i18n="m.snip.t">Snippets</strong><span data-i18n="m.snip.d">Saved commands typed into the terminal with <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd>, per group if you like.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><strong data-i18n="m.wait.t">Tabs that need you</strong><span data-i18n="m.wait.d">A tab waiting for a password or host key shows a lock until you open it.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M9 10 4 15l5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg><div><strong data-i18n="m.reconnect.t">Reconnect with Enter</strong><span data-i18n="m.reconnect.d">When a session ends, press Enter in its tab to connect again.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><div><strong data-i18n="m.backup.t">Backup &amp; restore</strong><span data-i18n="m.backup.d">Export connections, favorites, layouts, snippets and settings to one file; never passwords or keys.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><div><strong data-i18n="m.log.t">Session log</strong><span data-i18n="m.log.d">Save what a terminal shows to a text file, without colours; a red dot marks the tab.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><div><strong data-i18n="m.copy.t">PuTTY-style copy &amp; paste</strong><span data-i18n="m.copy.d">Select to copy, right click to paste.</span></div></li>
       </ul>
     </section>
 
@@ -357,7 +360,7 @@
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
         <h2 data-i18n="dl.title">Get Termdock</h2>
-        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.14.0</span></p>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, and it keeps itself up to date.</span> <span class="ver-chip" id="dl-version">v0.15.0</span></p>
       </header>
 
       <div class="dl-grid">
@@ -439,6 +442,10 @@
         <details>
           <summary data-i18n="faq.q5">Does it replace PuTTY or Windows Terminal?</summary>
           <p data-i18n="faq.a5">It covers both jobs: a modern terminal for local shells (PowerShell, cmd, WSL, Git Bash, bash, zsh…) and a connection manager for SSH with favorites, SFTP, tunnels and jump hosts, in the same window.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q6">Can I move my setup to another computer?</summary>
+          <p data-i18n="faq.a6">Yes. Settings → General → <em>Export…</em> saves connections, favorites, layouts, snippets and settings in one JSON file; on the other computer <em>Import…</em> shows what the backup holds, then adds only what is new or replaces the current configuration. Passwords, keys and host keys are never included, so you enter them again there.</p>
         </details>
       </div>
     </section>

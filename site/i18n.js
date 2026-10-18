@@ -14,7 +14,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Snippet: comandi salvati a una scorciatoia di distanza",
+    "hero.news": "Backup della configurazione e log delle sessioni",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Scritto in puro Rust.",
@@ -64,6 +64,12 @@ window.TD_I18N = {
     "m.wait.d": "Una scheda in attesa di password o chiave host mostra un lucchetto finché non la apri.",
     "m.reconnect.t": "Riconnessione con Invio",
     "m.reconnect.d": "Quando una sessione finisce, premi Invio nella sua scheda per ricollegarti.",
+    "m.backup.t": "Backup e ripristino",
+    "m.backup.d": "Esporta connessioni, preferiti, layout, snippet e impostazioni in un solo file; mai password o chiavi.",
+    "m.log.t": "Log della sessione",
+    "m.log.d": "Salva ciò che mostra un terminale in un file di testo, senza colori; un punto rosso segna la scheda.",
+    "m.copy.t": "Copia e incolla come PuTTY",
+    "m.copy.d": "Seleziona per copiare, tasto destro per incollare.",
 
     "sec.eyebrow": "Sicurezza",
     "sec.title": "Paranoico per scelta.",
@@ -126,6 +132,8 @@ window.TD_I18N = {
     "faq.a4": "All'avvio e una volta al giorno Termdock controlla se c'è una nuova versione, e la installa solo dopo la tua conferma. Ogni pacchetto è verificato con la chiave di firma integrata nell'app e deve essere firmato per la versione che dichiara, quindi pacchetti manomessi o più vecchi vengono rifiutati. Puoi disattivare il controllo nelle Impostazioni. Le installazioni deb e rpm ricevono solo l'avviso, così resta il gestore di pacchetti a decidere.",
     "faq.q5": "Sostituisce PuTTY o Windows Terminal?",
     "faq.a5": "Fa entrambi i lavori: un terminale moderno per le shell locali (PowerShell, cmd, WSL, Git Bash, bash, zsh…) e un gestore di connessioni SSH con preferiti, SFTP, tunnel e jump host, nella stessa finestra.",
+    "faq.q6": "Posso portare la mia configurazione su un altro computer?",
+    "faq.a6": "Sì. Impostazioni → Generale → <em>Esporta…</em> salva connessioni, preferiti, layout, snippet e impostazioni in un file JSON; sull'altro computer <em>Importa…</em> mostra cosa contiene il backup, poi aggiunge solo ciò che è nuovo oppure sostituisce la configurazione attuale. Password, chiavi e chiavi host non sono mai incluse, quindi lì le inserisci di nuovo.",
 
     "final.title": "Metti in porto i tuoi server.",
     "final.text": "Configura i preferiti una volta, e ogni connessione è a un solo clic.",
