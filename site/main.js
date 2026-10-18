@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "d40b8be"], ["", " Automatic reconnection, log wrap fix, macOS quarantine (0.16.0)"]],
           [["t-yellow", "9934018"], ["", " Configuration backup and session logs (0.15.0)"]],
           [["t-yellow", "ba544da"], ["", " Snippets, and Linux packages built in Ubuntu 22.04 (0.14.0)"]],
-          [["t-yellow", "dc4b712"], ["", " Folder uploads and downloads with a transfer queue (0.13.0)"]],
         ],
       },
       { cmd: "echo $SHELL" },

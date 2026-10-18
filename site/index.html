@@ -70,8 +70,8 @@
     <!-- ───────────── Hero ───────────── -->
     <section class="hero" id="top">
       <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
-        <span class="pill-tag" id="news-version">v0.15</span>
-        <span data-i18n="hero.news">Configuration backup and session logs</span>
+        <span class="pill-tag" id="news-version">v0.16</span>
+        <span data-i18n="hero.news">Automatic reconnection when the network drops</span>
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
@@ -93,7 +93,7 @@
         </a>
       </div>
       <p class="hero-meta reveal">
-        <span id="hero-version">v0.15.0</span>
+        <span id="hero-version">v0.16.0</span>
         <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
         <span class="dot"></span><span>MIT</span>
         <span class="dot"></span><span>Windows · macOS · Linux</span>
@@ -260,7 +260,7 @@
         <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg><div><strong data-i18n="m.keys.t">Your keys, your way</strong><span data-i18n="m.keys.d">Rebind or disable any shortcut.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><path d="m15 15 3 3 3-3"/></svg><div><strong data-i18n="m.snip.t">Snippets</strong><span data-i18n="m.snip.d">Saved commands typed into the terminal with <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd>, optionally limited to one group.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><strong data-i18n="m.wait.t">Tabs that need you</strong><span data-i18n="m.wait.d">A tab waiting for a password or host key shows a lock until you open it.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M9 10 4 15l5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg><div><strong data-i18n="m.reconnect.t">Reconnect with Enter</strong><span data-i18n="m.reconnect.d">When a session ends, press Enter in its tab to connect again.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M9 10 4 15l5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg><div><strong data-i18n="m.reconnect.t">Automatic reconnection</strong><span data-i18n="m.reconnect.d">If the network drops, the terminal reconnects by itself; <kbd>Enter</kbd> retries now, <kbd>Esc</kbd> stops.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><div><strong data-i18n="m.backup.t">Backup &amp; restore</strong><span data-i18n="m.backup.d">Export connections, favorites, layouts, snippets and settings to one file; never passwords or keys.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><div><strong data-i18n="m.log.t">Session log</strong><span data-i18n="m.log.d">Save what a terminal shows to a text file, without colors; a red dot marks the tab.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><div><strong data-i18n="m.copy.t">PuTTY-style copy &amp; paste</strong><span data-i18n="m.copy.d">Right click copies the selection, or pastes when nothing is selected.</span></div></li>
@@ -318,7 +318,7 @@
         <article class="mini-card spot reveal">
           <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
           <h3 data-i18n="sc.chan.t">The server can't reach back</h3>
-          <p data-i18n="sc.chan.d">Channels the server tries to open on its own (X11, agent, sessions, direct connections) are refused, and links it prints in the terminal are never opened.</p>
+          <p data-i18n="sc.chan.d">Channels the server tries to open on its own (X11, agent, sessions, direct connections) are refused, links it prints in the terminal are never opened, and downloaded files are marked so SmartScreen or Gatekeeper checks them before they run.</p>
         </article>
         <article class="mini-card spot reveal">
           <svg class="i" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
@@ -360,7 +360,7 @@
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
         <h2 data-i18n="dl.title">Get Termdock</h2>
-        <p class="lead"><span data-i18n="dl.lead">Free, open source, with signed in-app updates.</span> <span class="ver-chip" id="dl-version">v0.15.0</span></p>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, with signed in-app updates.</span> <span class="ver-chip" id="dl-version">v0.16.0</span></p>
       </header>
 
       <div class="dl-grid">
