@@ -1321,6 +1321,28 @@ kbd {
   opacity: 0.85;
 }
 
+.fqueue {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--app-line);
+}
+
+.dir-arrow {
+  width: 15px;
+  flex: none;
+  text-align: center;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.frow.done em {
+  color: var(--ok);
+}
+
+.frow .qx {
+  color: var(--app-dim);
+}
+
 .frow .bar {
   width: 70px;
   height: 5px;

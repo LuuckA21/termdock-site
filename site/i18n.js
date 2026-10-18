@@ -14,7 +14,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Release di rafforzamento della sicurezza: scopri le novità",
+    "hero.news": "Cartelle intere con coda di trasferimento: scopri le novità",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Scritto in puro Rust.",
@@ -34,7 +34,7 @@ window.TD_I18N = {
     "f.split.title": "Pannelli divisi",
     "f.split.text": "Server A a sinistra, server B a destra. Dividi quante volte vuoi, trascina i divisori, spostati con <kbd>Alt</kbd><kbd>←↑→↓</kbd>.",
     "f.sftp.title": "File browser SFTP",
-    "f.sftp.text": "I file accanto al terminale, sulla stessa connessione: nessun secondo login. Caricamento con trascinamento, segue il <code>cd</code>, modifica i file remoti con <kbd>F4</kbd>, anche come un altro utente dopo <code>sudo -iu</code>.",
+    "f.sftp.text": "I file accanto al terminale, sulla stessa connessione: nessun secondo login. Carica e scarica cartelle intere con una coda di trasferimento, trascinamento, segue il <code>cd</code>, modifica i file remoti con <kbd>F4</kbd>, anche come un altro utente dopo <code>sudo -iu</code>.",
     "f.jump.title": "Jump host e port forwarding",
     "f.jump.text": "Raggiungi reti private attraverso un bastion, o un'intera catena; ogni salto verifica la propria chiave host. Salva con la connessione i tunnel locali <code>-L</code>, remoti <code>-R</code> e SOCKS5 dinamici <code>-D</code>.",
     "f.jump.you": "tu",
