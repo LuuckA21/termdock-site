@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "9934018"], ["", " Configuration backup and session logs (0.15.0)"]],
           [["t-yellow", "ba544da"], ["", " Snippets, and Linux packages built in Ubuntu 22.04 (0.14.0)"]],
           [["t-yellow", "dc4b712"], ["", " Folder uploads and downloads with a transfer queue (0.13.0)"]],
-          [["t-yellow", "3e6402c"], ["", " Blocking work off the runtime, tab waiting mark (0.12.1)"]],
         ],
       },
       { cmd: "echo $SHELL" },
