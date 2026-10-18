@@ -8,7 +8,7 @@ Static and dependency-free: plain HTML, CSS and JavaScript in [`site/`](site), n
 
 ## What's on the page
 
-- An interactive replica of the app: click the favorites to open tabs, type `user@host:port` in quick connect, type `help` in the terminal once a session is idle.
+- An interactive replica of the app: click the favorites to open tabs, type `user@host:port` in quick connect, type `help` in the terminal once a session is idle, or press `Ctrl+Shift+P` to type a snippet.
 - Terminal colour schemes (the same palettes as the app) that restyle the demo live.
 - Keyboard shortcut list that lights up when the combination is pressed.
 - Download buttons for the visitor's system, linked to the assets of the latest GitHub release.

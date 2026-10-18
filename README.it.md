@@ -8,7 +8,7 @@ Statico e senza dipendenze: HTML, CSS e JavaScript puri in [`site/`](site), ness
 
 ## Cosa c'è nella pagina
 
-- Una replica interattiva dell'app: clicca i preferiti per aprire schede, scrivi `user@host:port` nella connessione rapida, scrivi `help` nel terminale quando una sessione è inattiva.
+- Una replica interattiva dell'app: clicca i preferiti per aprire schede, scrivi `user@host:port` nella connessione rapida, scrivi `help` nel terminale quando una sessione è inattiva, oppure premi `Ctrl+Shift+P` per scrivere uno snippet.
 - Le combinazioni di colori del terminale (le stesse dell'app), che cambiano la demo in tempo reale.
 - L'elenco delle scorciatoie da tastiera, che si illumina quando premi la combinazione.
 - Pulsanti di download per il sistema del visitatore, collegati ai file dell'ultima release su GitHub.
