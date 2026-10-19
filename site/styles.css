@@ -916,6 +916,9 @@ kbd {
   color: var(--app-dim);
   font-size: 13px;
   white-space: nowrap;
+}
+
+.tab.new {
   animation: tabIn 0.35s var(--ease);
 }
 
@@ -945,6 +948,17 @@ kbd {
 .tab .x:hover {
   background: var(--app-bg-3);
   color: var(--app-fg);
+}
+
+.tab.activity .label::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  vertical-align: 0.15em;
 }
 
 .tab.closed .label {
@@ -1499,6 +1513,80 @@ kbd {
 
 .code .k {
   color: var(--accent-2);
+}
+
+/* Connection manager viz */
+.viz-manager {
+  padding: 12px;
+  background: var(--app-bg-2);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--app-fg);
+}
+
+.mg-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--app-bg);
+  font: 12.5px var(--mono);
+}
+
+.mg-search .i {
+  width: 14px;
+  height: 14px;
+  color: var(--app-dim);
+}
+
+.mg-group {
+  padding: 4px 10px;
+  font: 600 11px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--app-dim);
+}
+
+.mg-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.mg-row:nth-of-type(odd) {
+  background: color-mix(in srgb, var(--app-bg-3) 60%, transparent);
+}
+
+.mg-row .led.c-red { --c: #ff6b6b; }
+.mg-row .led.c-yellow { --c: #ffd166; }
+.mg-row .led.c-blue { --c: #6c8cff; }
+
+.mg-row em {
+  font: normal 11.5px var(--mono);
+  color: var(--app-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mg-row b {
+  margin-left: auto;
+  font-weight: 400;
+  color: var(--app-line);
+}
+
+.mg-row b.on {
+  color: var(--star);
+}
+
+.code .ok {
+  color: var(--ok);
 }
 
 /* Schemes */
