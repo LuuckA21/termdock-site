@@ -123,7 +123,7 @@ window.TD_I18N = {
 
     "faq.title": "Buone domande.",
     "faq.q1": "Termdock è davvero gratuito?",
-    "faq.a1": "Sì. È open source con licenza MIT, senza account da creare e senza versioni a pagamento.",
+    "faq.a1": "Sì. È open source con licenza MIT, senza account da creare e senza versioni a pagamento. Se ti fa risparmiare tempo, puoi sostenerne lo sviluppo su <a href=\"https://ko-fi.com/luucka21\" rel=\"noopener\">Ko-fi</a>.",
     "faq.q2": "Dove vengono salvate le password?",
     "faq.a2": "Da nessuna parte, a meno che tu non lo chieda. Se scegli di ricordarne una, finisce nel portachiavi del sistema operativo (Gestione credenziali di Windows, Portachiavi di macOS o Secret Service su Linux), mai in un file. Cambiare host, porta, utente o metodo di autenticazione di una connessione la cancella.",
     "faq.q3": "Posso usare chiavi SSH, agent e config che ho già?",
@@ -139,11 +139,13 @@ window.TD_I18N = {
     "final.text": "Configura i preferiti una volta sola: da lì ogni connessione è a un clic.",
     "final.cta": "Scarica Termdock",
     "final.star": "Lascia una stella su GitHub",
+    "final.support": "Sostienilo su Ko-fi",
 
     "foot.tag": "Terminale e gestore di connessioni SSH per Windows, macOS e Linux.",
     "foot.releases": "Release",
     "foot.security": "Sicurezza",
     "foot.issues": "Segnala un problema",
+    "foot.support": "Sostieni Termdock",
     "foot.license": "Distribuito con licenza MIT."
   },
 

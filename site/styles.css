@@ -504,6 +504,20 @@ kbd {
   border-color: color-mix(in srgb, var(--accent-2) 60%, var(--line-2));
 }
 
+.btn-support .i {
+  color: var(--star);
+}
+
+.btn-support:hover {
+  border-color: color-mix(in srgb, var(--star) 60%, var(--line-2));
+}
+
+.faq-list details p a {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .os-icon:empty {
   display: none;
 }
