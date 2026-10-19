@@ -70,8 +70,8 @@
     <!-- ───────────── Hero ───────────── -->
     <section class="hero" id="top">
       <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
-        <span class="pill-tag" id="news-version">v0.16</span>
-        <span data-i18n="hero.news">Automatic reconnection when the network drops</span>
+        <span class="pill-tag" id="news-version">v0.18</span>
+        <span data-i18n="hero.news">Tab comforts and SSH key generation</span>
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
@@ -93,7 +93,7 @@
         </a>
       </div>
       <p class="hero-meta reveal">
-        <span id="hero-version">v0.16.0</span>
+        <span id="hero-version">v0.18.0</span>
         <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
         <span class="dot"></span><span>MIT</span>
         <span class="dot"></span><span>Windows · macOS · Linux</span>
@@ -166,7 +166,7 @@
           <div class="card-body">
             <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M12 12h9"/></svg></span>
             <h3 data-i18n="f.split.title">Split panes</h3>
-            <p data-i18n="f.split.text">Server A on the left, server B on the right. Split as often as you like, drag dividers, jump with <kbd>Alt</kbd><kbd>←↑→↓</kbd>.</p>
+            <p data-i18n="f.split.text">Server A on the left, server B on the right. Split as often as you like, put open tabs side by side without reconnecting, drag dividers, jump with <kbd>Alt</kbd><kbd>←↑→↓</kbd>.</p>
           </div>
           <div class="viz viz-split" aria-hidden="true">
             <div class="pane p1"><i></i><i></i><i></i></div>
@@ -180,7 +180,7 @@
           <div class="card-body">
             <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
             <h3 data-i18n="f.sftp.title">SFTP file browser</h3>
-            <p data-i18n="f.sftp.text">Files next to the terminal, on the same connection: no second login. Drag &amp; drop, whole-folder transfers through a queue, a view that follows <code>cd</code>, remote editing with <kbd>F4</kbd>, even as another user after <code>sudo -iu</code>.</p>
+            <p data-i18n="f.sftp.text">Files next to the terminal, on the same connection: no second login. Drag &amp; drop, whole-folder transfers through a queue, a view that follows <code>cd</code>, remote editing with <kbd>F4</kbd> (uploaded at every save, asking first if the server's copy changed), even as another user after <code>sudo -iu</code>, whose password is never saved.</p>
           </div>
           <div class="viz viz-files" aria-hidden="true">
             <div class="frow"><span class="fi dir"></span>/var/www<em>drwxr-xr-x</em></div>
@@ -245,25 +245,59 @@
           <div class="card-body">
             <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20 2 2 0 0 0 2-2 2 2 0 0 1 2-2h2a4 4 0 0 0 4-4c0-6-4.5-10-10-10Z"/></svg></span>
             <h3 data-i18n="f.themes.title">Themes &amp; fonts</h3>
-            <p data-i18n="f.themes.text">Dark, light or system. Pick a color scheme below and watch the terminal above change.</p>
+            <p data-i18n="f.themes.text">Dark, light or system; font, cursor and scrollback with a live preview. Pick a color scheme below and watch the terminal above change.</p>
           </div>
           <div class="viz schemes" id="schemes" role="radiogroup" aria-label="Terminal color scheme" data-i18n-attr="aria-label:f.themes.group"></div>
+        </article>
+
+        <!-- Connection manager -->
+        <article class="card c-wide spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+            <h3 data-i18n="f.manager.title">Connection manager</h3>
+            <p data-i18n="f.manager.text">Every server in groups, with colors and search; a star pins it to the favorites bar. Open it with <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>M</kbd>.</p>
+          </div>
+          <div class="viz viz-manager" aria-hidden="true">
+            <div class="mg-search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>prod</div>
+            <div class="mg-group">Production</div>
+            <div class="mg-row"><span class="led c-red"></span>prod-web-01<em>deploy@10.0.1.21</em><b class="on">★</b></div>
+            <div class="mg-row"><span class="led c-yellow"></span>db-primary<em>postgres@10.0.4.12</em><b class="on">★</b></div>
+            <div class="mg-row"><span class="led c-blue"></span>prod-worker-02<em>deploy@10.0.1.34</em><b>★</b></div>
+          </div>
+        </article>
+
+        <!-- SSH keys -->
+        <article class="card spot reveal">
+          <div class="card-body">
+            <span class="card-icon"><svg class="i" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/></svg></span>
+            <h3 data-i18n="f.keys.title">SSH keys, made and installed</h3>
+            <p data-i18n="f.keys.text">Generate an Ed25519 key with a passphrase (an existing file is never replaced), then install the public key on the server, like <code>ssh-copy-id</code>.</p>
+          </div>
+          <pre class="viz code" aria-hidden="true"><span class="k">ssh-ed25519</span> AAAAC3Nza…9xWc
+→ ~/.ssh/id_ed25519
+→ authorized_keys <span class="ok">✓</span></pre>
         </article>
       </div>
 
       <ul class="minis reveal">
         <li><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div><strong data-i18n="m.find.t">Find in terminal</strong><span data-i18n="m.find.d">Regex, match case, highlighted results.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/></svg><div><strong data-i18n="m.layouts.t">Saved layouts</strong><span data-i18n="m.layouts.d">Reopen a whole workspace in one click, even at startup.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><div><strong data-i18n="m.quick.t">Quick connect</strong><span data-i18n="m.quick.d">Type <code>user@host:port</code>, press Enter.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><div><strong data-i18n="m.quick.t">Quick connect</strong><span data-i18n="m.quick.d">Type <code>user@host:port</code> and press Enter; <kbd>↑</kbd><kbd>↓</kbd> bring back the last 10.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg><div><strong data-i18n="m.update.t">Signed auto-updates</strong><span data-i18n="m.update.d">Only after you confirm, verified with Ed25519.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.05 9.5A18 18 0 0 1 6.4 9M12.5 18H19M11 21l5-10 5 10M4 15c2.4-1.2 4.7-3.6 6-6.5"/></svg><div><strong data-i18n="m.i18n.t">English &amp; Italiano</strong><span data-i18n="m.i18n.d">Switch instantly, sessions keep running.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg><div><strong data-i18n="m.keys.t">Your keys, your way</strong><span data-i18n="m.keys.d">Rebind or disable any shortcut.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><path d="m15 15 3 3 3-3"/></svg><div><strong data-i18n="m.snip.t">Snippets</strong><span data-i18n="m.snip.d">Saved commands typed into the terminal with <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd>, optionally limited to one group.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg><div><strong data-i18n="m.keys.t">Your keys, your way</strong><span data-i18n="m.keys.d">Rebind or disable any shortcut, with a warning for keys that terminal programs need.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><path d="m15 15 3 3 3-3"/></svg><div><strong data-i18n="m.snip.t">Snippets</strong><span data-i18n="m.snip.d">Saved commands typed with <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd> or a <kbd>1…9</kbd> shortcut, with or without Enter, optionally limited to one group.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><strong data-i18n="m.wait.t">Tabs that need you</strong><span data-i18n="m.wait.d">A tab waiting for a password or host key shows a lock until you open it.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M9 10 4 15l5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg><div><strong data-i18n="m.reconnect.t">Automatic reconnection</strong><span data-i18n="m.reconnect.d">If the network drops, the terminal reconnects by itself; <kbd>Enter</kbd> retries now, <kbd>Esc</kbd> stops.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M9 10 4 15l5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg><div><strong data-i18n="m.reconnect.t">Automatic reconnection</strong><span data-i18n="m.reconnect.d">If the network drops, the terminal reconnects by itself, log and file browser included; <kbd>Enter</kbd> retries now, <kbd>Esc</kbd> stops.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><div><strong data-i18n="m.backup.t">Backup &amp; restore</strong><span data-i18n="m.backup.d">Export connections, favorites, layouts, snippets and settings to one file; never passwords or keys.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><div><strong data-i18n="m.log.t">Session log</strong><span data-i18n="m.log.d">Save what a terminal shows to a text file, without colors; a red dot marks the tab.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><div><strong data-i18n="m.log.t">Session log</strong><span data-i18n="m.log.d">Off unless you start it: what a terminal shows goes to a text file only you can read, without colors.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><div><strong data-i18n="m.copy.t">PuTTY-style copy &amp; paste</strong><span data-i18n="m.copy.d">Right click copies the selection, or pastes when nothing is selected.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3M12 15h5"/></svg><div><strong data-i18n="m.term.t">A complete terminal</strong><span data-i18n="m.term.d">xterm-256color, truecolor, Unicode and resizing, over SSH too.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg><div><strong data-i18n="m.auth.t">Every way to log in</strong><span data-i18n="m.auth.d">SSH agent, private keys (encrypted too), password, keyboard-interactive and 2FA.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M6 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><circle cx="18" cy="4" r="2"/></svg><div><strong data-i18n="m.tabs.t">Tabs your way</strong><span data-i18n="m.tabs.d">Rename, drag and duplicate them; a dot or a bell tells you when a hidden tab has news.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><div><strong data-i18n="m.confirm.t">No accidental closing</strong><span data-i18n="m.confirm.d">Closing a tab, a pane or the app with open SSH connections asks first.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg><div><strong data-i18n="m.window.t">Right where you left it</strong><span data-i18n="m.window.d">The window opens again with its last size and position.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6M11 8v6"/></svg><div><strong data-i18n="m.zoom.t">Zoom</strong><span data-i18n="m.zoom.d"><kbd>Ctrl</kbd> + <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> changes or resets the font size.</span></div></li>
       </ul>
     </section>
 
@@ -298,7 +332,7 @@
         <article class="mini-card spot reveal">
           <svg class="i" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
           <h3 data-i18n="sc.hk.t">Host keys, verified first</h3>
-          <p data-i18n="sc.hk.d">The fingerprint is checked before any authentication. A changed key is refused, with no "connect anyway" button.</p>
+          <p data-i18n="sc.hk.d">The fingerprint is checked before any authentication. A changed key is refused, with no "connect anyway" button. <code>~/.ssh/known_hosts</code> is read too, with hashed entries, wildcards and <code>@revoked</code>.</p>
         </article>
         <article class="mini-card spot reveal">
           <svg class="i" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -350,6 +384,8 @@
         <div class="key-row" data-combo="alt+arrow"><span class="combo"><kbd>Alt</kbd><kbd>←↑→↓</kbd></span><span data-i18n="k.alt">Move between panes</span></div>
         <div class="key-row" data-combo="ctrl+shift+p"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd></span><span data-i18n="k.p">Snippets menu</span></div>
         <div class="key-row" data-combo="ctrl+shift+w"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>W</kbd></span><span data-i18n="k.w">Close pane</span></div>
+        <div class="key-row" data-combo="ctrl+tab"><span class="combo"><kbd>Ctrl</kbd><kbd>Tab</kbd></span><span data-i18n="k.next">Next tab</span></div>
+        <div class="key-row" data-combo="ctrl+zoom"><span class="combo"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>-</kbd><kbd>0</kbd></span><span data-i18n="k.zoom">Font size</span></div>
         <div class="key-row" data-combo="ctrl+comma"><span class="combo"><kbd>Ctrl</kbd><kbd>,</kbd></span><span data-i18n="k.set">Settings</span></div>
       </div>
       <p class="note reveal" data-i18n="keys.note">On macOS <kbd>Cmd</kbd> works in place of <kbd>Ctrl</kbd>, and <em>Go to tab N</em> is <kbd>Cmd</kbd><kbd>1…9</kbd>.</p>
@@ -360,7 +396,7 @@
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
         <h2 data-i18n="dl.title">Get Termdock</h2>
-        <p class="lead"><span data-i18n="dl.lead">Free, open source, with signed in-app updates.</span> <span class="ver-chip" id="dl-version">v0.16.0</span></p>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, with signed in-app updates.</span> <span class="ver-chip" id="dl-version">v0.18.0</span></p>
       </header>
 
       <div class="dl-grid">
@@ -433,7 +469,7 @@
         </details>
         <details>
           <summary data-i18n="faq.q3">Can I use my existing SSH keys, agent and config?</summary>
-          <p data-i18n="faq.a3">Yes. Termdock works with ssh-agent, the Windows OpenSSH agent and Pageant, reads encrypted private keys and your <code>~/.ssh/known_hosts</code>, and imports connections from <code>~/.ssh/config</code> with a preview first.</p>
+          <p data-i18n="faq.a3">Yes. Termdock works with ssh-agent, the Windows OpenSSH agent and Pageant, private keys (encrypted too), passwords and keyboard-interactive / 2FA logins, reads your <code>~/.ssh/known_hosts</code>, and imports connections from <code>~/.ssh/config</code> with a preview first.</p>
         </details>
         <details>
           <summary data-i18n="faq.q4">How do updates work?</summary>

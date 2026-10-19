@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "5f57714"], ["", " Tab and window comforts (0.18.0)"]],
+          [["t-yellow", "4aaf17b"], ["", " SSH key generation and install on servers (0.17.0)"]],
           [["t-yellow", "d40b8be"], ["", " Automatic reconnection, log wrap fix, macOS quarantine (0.16.0)"]],
-          [["t-yellow", "9934018"], ["", " Configuration backup and session logs (0.15.0)"]],
-          [["t-yellow", "ba544da"], ["", " Snippets, and Linux packages built in Ubuntu 22.04 (0.14.0)"]],
         ],
       },
       { cmd: "echo $SHELL" },
@@ -468,6 +468,10 @@
     // Keep the scrollback short so the demo never grows unbounded.
     while (tab.view.childElementCount > 200) tab.view.firstElementChild.remove();
     if (tab === active) termEl.scrollTop = termEl.scrollHeight;
+    else if (!tab.activity && tabs.includes(tab)) {
+      tab.activity = true;
+      renderTabs();
+    }
     return ln;
   }
 
@@ -606,7 +610,7 @@
     const view = document.createElement("div");
     const cursor = document.createElement("span");
     cursor.className = "cursor";
-    const tab = { id: nextId++, session, script: custom ? null : sessionId, view, cursor, input: null, idle: false, dead: false, closed: false };
+    const tab = { id: nextId++, fresh: true, session, script: custom ? null : sessionId, view, cursor, input: null, idle: false, dead: false, closed: false };
     tabs.push(tab);
     activate(tab);
     play(tab);
@@ -628,6 +632,7 @@
 
   function activate(tab) {
     active = tab;
+    tab.activity = false;
     termEl.replaceChildren(tab.view);
     termEl.scrollTop = termEl.scrollHeight;
     renderTabs();
@@ -637,7 +642,9 @@
     if (!tabsEl) return;
     const nodes = tabs.map((tab) => {
       const b = document.createElement("div");
-      b.className = `tab ${tab.session.color}` + (tab.closed ? " closed" : "");
+      // Only a newly opened tab animates in; re-renders must not flash the others.
+      b.className = `tab ${tab.session.color}` + (tab.closed ? " closed" : "") + (tab.activity ? " activity" : "") + (tab.fresh ? " new" : "");
+      tab.fresh = false;
       b.setAttribute("role", "tab");
       b.setAttribute("aria-selected", String(tab === active));
       b.tabIndex = tab === active ? 0 : -1;
@@ -681,6 +688,15 @@
   });
 
   // Quick connect: user@host[:port]
+  let quickHistory = [];
+  let quickIndex = -1;
+  $("#quick-input").addEventListener("keydown", (e) => {
+    if ((e.key !== "ArrowUp" && e.key !== "ArrowDown") || quickHistory.length === 0) return;
+    e.preventDefault();
+    quickIndex = Math.max(-1, Math.min(quickHistory.length - 1, quickIndex + (e.key === "ArrowUp" ? 1 : -1)));
+    e.target.value = quickIndex < 0 ? "" : quickHistory[quickIndex];
+  });
+
   $("#quick").addEventListener("submit", (e) => {
     e.preventDefault();
     const input = $("#quick-input");
@@ -691,6 +707,9 @@
     }
     const [, user = "root", host] = m;
     openTab(null, { title: host, color: "c-green", user, host, newKey: true });
+    const address = input.value.trim();
+    quickHistory = [address, ...quickHistory.filter((a) => a !== address)].slice(0, 10);
+    quickIndex = -1;
     input.value = "";
     termEl.focus({ preventScroll: true });
   });
@@ -740,6 +759,8 @@
     if (isMac && e.metaKey && !e.shiftKey && !e.altKey && /^Digit[1-9]$/.test(e.code)) return "alt+digit";
     if (e.altKey && !ctrl && e.key.startsWith("Arrow")) return "alt+arrow";
     if (ctrl && !e.shiftKey && e.key === ",") return "ctrl+comma";
+    if (e.ctrlKey && e.key === "Tab") return "ctrl+tab";
+    if (ctrl && !e.altKey && ["+", "=", "-", "0"].includes(e.key)) return "ctrl+zoom";
     if (ctrl && e.shiftKey && /^Key[A-Z]$/.test(e.code)) return `ctrl+shift+${e.code.slice(3).toLowerCase()}`;
     return null;
   }
@@ -770,7 +791,7 @@
     const row = combo && rows.get(combo);
     if (!row || onScreen.size === 0) return;
     if (e.target instanceof HTMLInputElement) return;
-    e.preventDefault();
+    if (combo !== "ctrl+tab" && combo !== "ctrl+zoom") e.preventDefault();
     flash(row);
     // Mirror a few actions in the demo window.
     if (combo === "ctrl+shift+t") openTab("local");
