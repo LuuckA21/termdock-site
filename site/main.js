@@ -469,9 +469,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "8e41a3b"], ["", " Security 0.20.1: backup preview shows local programs, cleaner local shells, more refused editors"]],
           [["t-yellow", "fd7f148"], ["", " QoL 0.20.0: web links, production servers, startup command, bell notification, command palette"]],
           [["t-yellow", "8e4bad0"], ["", " Add the ranked feature list (FEATURES.md / FEATURES.it.md)"]],
-          [["t-yellow", "616ada0"], ["", " QoL 0.19.0: duplicate connection, clear terminal, close others/right, open group, paste preview, copy on select"]],
         ],
       },
       { cmd: "echo $SHELL" },
