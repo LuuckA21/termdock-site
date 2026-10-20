@@ -14,7 +14,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Apri un gruppo intero in un colpo, copia alla selezione",
+    "hero.news": "Tavolozza comandi e server di produzione in rosso",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Cuore in Rust, SSH in puro Rust.",
@@ -81,13 +81,20 @@ window.TD_I18N = {
     "m.auth.t": "Tutti i modi di accedere",
     "m.auth.d": "SSH agent, chiavi private (anche cifrate), password, keyboard-interactive e 2FA.",
     "m.tabs.t": "Schede a modo tuo",
-    "m.tabs.d": "Rinominale, trascinale, duplicale, puliscile, chiudi le altre in un colpo; un punto o una campanella ti dicono quando una scheda nascosta ha novità.",
+    "m.tabs.d": "Rinominale, trascinale, duplicale, puliscile, chiudi le altre in un colpo; un punto, una campanella o una notifica di sistema opzionale ti dicono quando una scheda nascosta ha novità.",
     "m.confirm.t": "Niente chiusure per sbaglio",
     "m.confirm.d": "Chiudere una scheda, un pannello o l'app con connessioni SSH aperte chiede prima conferma.",
     "m.window.t": "Dove l'avevi lasciata",
     "m.window.d": "La finestra si riapre con le ultime dimensioni e posizione.",
     "m.zoom.t": "Zoom",
     "m.zoom.d": "<kbd>Ctrl</kbd> + <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> cambia o ripristina la dimensione del carattere.",
+
+    "m.palette.t": "Tavolozza comandi",
+    "m.palette.d": "<kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>A</kbd>: azioni, schede, connessioni, layout e snippet in un'unica ricerca.",
+    "m.links.t": "Link web cliccabili",
+    "m.links.d": "Si aprono con <kbd>Ctrl</kbd>+clic, dopo una conferma che mostra dove portano.",
+    "m.prod.t": "Server di produzione in rosso",
+    "m.prod.d": "Etichetta sulla scheda e bordo rosso del terminale, più un comando iniziale per connessione (per esempio <code>cd /var/www</code>).",
 
     "sec.eyebrow": "Sicurezza",
     "sec.title": "Paranoico per scelta.",
@@ -104,7 +111,7 @@ window.TD_I18N = {
     "sc.upd.d": "Gli aggiornamenti sono verificati con una chiave integrata nell'app, mai declassati. La CI esegue <code>cargo audit</code>, <code>npm audit</code> e test end-to-end contro OpenSSH.",
 
     "sc.chan.t": "Niente iniziative dal server",
-    "sc.chan.d": "I canali che il server prova ad aprire di sua iniziativa (X11, agent, sessioni, connessioni dirette) vengono rifiutati, i link che stampa nel terminale non vengono mai aperti e i file scaricati sono marcati, così SmartScreen o Gatekeeper li controllano prima che vengano eseguiti.",
+    "sc.chan.d": "I canali che il server prova ad aprire di sua iniziativa (X11, agent, sessioni, connessioni dirette) vengono rifiutati, i link web che stampa si aprono solo con <kbd>Ctrl</kbd>+clic dopo una conferma che mostra dove portano davvero, e i file scaricati sono marcati, così SmartScreen o Gatekeeper li controllano prima che vengano eseguiti.",
     "sc.paste.t": "Incolla sicuro, richieste al momento giusto",
     "sc.paste.d": "Il testo incollato perde i caratteri di controllo, più righe compaiono prima in anteprima con i caratteri invisibili segnalati, e la richiesta di password di una scheda in background aspetta che tu la guardi.",
 
@@ -127,6 +134,8 @@ window.TD_I18N = {
     "k.w": "Chiudi il pannello",
     "k.next": "Scheda successiva",
     "k.zoom": "Dimensione del carattere",
+    "k.a": "Tavolozza comandi",
+    "k.click": "Apri un link web",
     "k.set": "Impostazioni",
 
     "dl.eyebrow": "Download",

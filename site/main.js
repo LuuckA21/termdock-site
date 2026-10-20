@@ -371,7 +371,7 @@
 
   const SESSIONS = {
     "test-sshd": { title: "test-sshd", color: "c-green", user: "tdtest", host: "vm" },
-    "prod-web-01": { title: "prod-web-01", color: "c-red", user: "deploy", host: "prod-web-01", newKey: true },
+    "prod-web-01": { title: "prod-web-01", color: "c-red", user: "deploy", host: "prod-web-01", newKey: true, prod: true },
     "db-primary": { title: "db-primary", color: "c-yellow", user: "postgres", host: "db-primary", jump: true },
     local: { title: "zsh", color: "c-blue", local: true },
     router: { title: "edge-router", color: "c-magenta", user: "admin", host: "edge-router", jump: true },
@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "fd7f148"], ["", " QoL 0.20.0: web links, production servers, startup command, bell notification, command palette"]],
+          [["t-yellow", "8e4bad0"], ["", " Add the ranked feature list (FEATURES.md / FEATURES.it.md)"]],
           [["t-yellow", "616ada0"], ["", " QoL 0.19.0: duplicate connection, clear terminal, close others/right, open group, paste preview, copy on select"]],
-          [["t-yellow", "5f57714"], ["", " Tab and window comforts (0.18.0)"]],
-          [["t-yellow", "4aaf17b"], ["", " SSH key generation and install on servers (0.17.0)"]],
         ],
       },
       { cmd: "echo $SHELL" },
@@ -635,6 +635,7 @@
     tab.activity = false;
     termEl.replaceChildren(tab.view);
     termEl.scrollTop = termEl.scrollHeight;
+    termEl.classList.toggle("prod", Boolean(tab.session.prod));
     renderTabs();
   }
 
@@ -662,7 +663,14 @@
         e.stopPropagation();
         closeTab(tab);
       });
-      b.append(led, label, x);
+      if (tab.session.prod) {
+        const badge = document.createElement("span");
+        badge.className = "prod";
+        badge.textContent = "PROD";
+        b.append(led, label, badge, x);
+      } else {
+        b.append(led, label, x);
+      }
       b.addEventListener("click", () => activate(tab));
       b.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") activate(tab);
