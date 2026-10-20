@@ -2051,6 +2051,150 @@ kbd {
   border-color: #6c8cff;
 }
 
+/* ───────────── Roadmap ───────────── */
+
+.road {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.road-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  font: 600 13px/1 var(--mono);
+  color: var(--fg-dim);
+}
+
+.road-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line-2);
+  overflow: hidden;
+}
+
+/* --p (0…1) is set from JS through the CSSOM. */
+.road-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--ok);
+  transform: scaleX(var(--p, 0));
+  transform-origin: left;
+  transition: transform 0.8s ease;
+}
+
+.road-list {
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+/* The line from each dot to the next one (dot centre: 22px + 10px). */
+.road-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  bottom: -32px;
+  left: 9px;
+  width: 2px;
+  background: var(--line-2);
+}
+
+.road-item[data-state="done"]:not(:last-child)::before {
+  background: color-mix(in srgb, var(--ok) 55%, var(--line-2));
+}
+
+.road-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 18px;
+  padding-bottom: 14px;
+}
+
+.road-dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 22px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--line-2);
+}
+
+.road-item[data-state="done"] .road-dot {
+  background: var(--ok);
+  border-color: var(--ok);
+}
+
+.road-goal .road-dot {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.road-body {
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.road-goal .road-body {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line-2));
+}
+
+.road-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 12.5px/1.6 var(--mono);
+}
+
+.road-meta .ver-chip {
+  margin-left: 0;
+}
+
+.road-issue {
+  color: var(--accent-2);
+}
+
+.road-issue:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.road-state {
+  padding: 1px 9px;
+  border-radius: 999px;
+  color: var(--fg-dim);
+  border: 1px solid var(--line-2);
+}
+
+.road-state:empty {
+  display: none;
+}
+
+.road-item[data-state="done"] .road-state {
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 12%, transparent);
+  border-color: color-mix(in srgb, var(--ok) 30%, transparent);
+}
+
+.road-body h3 {
+  margin-top: 8px;
+  font-size: 1.08rem;
+  font-weight: 620;
+}
+
+.road-body p {
+  margin-top: 6px;
+  font-size: 14.5px;
+  color: var(--fg-dim);
+}
+
 /* ───────────── FAQ ───────────── */
 
 .faq-list {

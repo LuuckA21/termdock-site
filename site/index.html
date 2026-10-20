@@ -47,6 +47,7 @@
         <li><a href="#features" data-i18n="nav.features">Features</a></li>
         <li><a href="#security" data-i18n="nav.security">Security</a></li>
         <li><a href="#shortcuts" data-i18n="nav.shortcuts">Shortcuts</a></li>
+        <li><a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
         <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
       </ul>
       <div class="nav-tools">
@@ -454,6 +455,73 @@
             <svg class="i" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
           </button>
         </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Roadmap ───────────── -->
+    <section class="section roadmap" id="roadmap">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="road.eyebrow">Roadmap</p>
+        <h2 data-i18n="road.title">The road to 1.0.</h2>
+        <p class="lead" data-i18n="road.lead">What must land before Termdock 1.0, tracked in the open as a GitHub milestone. Other ideas can still arrive in 1.x.</p>
+      </header>
+
+      <div class="road reveal">
+        <div class="road-progress" id="road-progress" hidden>
+          <div class="road-bar"><span id="road-fill"></span></div>
+          <p id="road-count"></p>
+        </div>
+        <ol class="road-list">
+          <li class="road-item reveal" data-issue="33">
+            <span class="road-dot" aria-hidden="true"></span>
+            <div class="road-body">
+              <div class="road-meta"><a class="road-issue" href="https://github.com/LuuckA21/termdock/issues/33" rel="noopener">#33</a><span class="road-state"></span></div>
+              <h3 data-i18n="road.sign.t">Signed builds on macOS and Windows</h3>
+              <p data-i18n="road.sign.d">Developer ID signing and notarization on macOS, Authenticode signing on Windows, so Gatekeeper and SmartScreen stop warning at the first launch.</p>
+            </div>
+          </li>
+          <li class="road-item reveal" data-issue="34">
+            <span class="road-dot" aria-hidden="true"></span>
+            <div class="road-body">
+              <div class="road-meta"><a class="road-issue" href="https://github.com/LuuckA21/termdock/issues/34" rel="noopener">#34</a><span class="road-state"></span></div>
+              <h3 data-i18n="road.arm.t">ARM packages for Windows and Linux</h3>
+              <p data-i18n="road.arm.d">Native installers for Windows on ARM laptops, and AppImage, <code>.deb</code> and <code>.rpm</code> for ARM Linux such as the Raspberry Pi, with in-app updates on both.</p>
+            </div>
+          </li>
+          <li class="road-item reveal" data-issue="39">
+            <span class="road-dot" aria-hidden="true"></span>
+            <div class="road-body">
+              <div class="road-meta"><a class="road-issue" href="https://github.com/LuuckA21/termdock/issues/39" rel="noopener">#39</a><span class="road-state"></span></div>
+              <h3 data-i18n="road.fido.t">FIDO security keys</h3>
+              <p data-i18n="road.fido.d">Log in with <code>ed25519-sk</code> and <code>ecdsa-sk</code> keys on a YubiKey or similar, from a file or the agent, with a clear message when the key must be touched.</p>
+            </div>
+          </li>
+          <li class="road-item reveal" data-issue="37">
+            <span class="road-dot" aria-hidden="true"></span>
+            <div class="road-body">
+              <div class="road-meta"><a class="road-issue" href="https://github.com/LuuckA21/termdock/issues/37" rel="noopener">#37</a><span class="road-state"></span></div>
+              <h3 data-i18n="road.compat.t">Stored data that never breaks</h3>
+              <p data-i18n="road.compat.d">Tests that load connections, settings and backups written by older versions, so every update keeps your setup as it was.</p>
+            </div>
+          </li>
+          <li class="road-item reveal" data-issue="36">
+            <span class="road-dot" aria-hidden="true"></span>
+            <div class="road-body">
+              <div class="road-meta"><a class="road-issue" href="https://github.com/LuuckA21/termdock/issues/36" rel="noopener">#36</a><span class="road-state"></span></div>
+              <h3 data-i18n="road.rc.t">A fixes-only stabilization period</h3>
+              <p data-i18n="road.rc.d">A feature-frozen release candidate used daily on Windows, macOS and Linux for a few weeks, with only fix releases until no blocking bug is open.</p>
+            </div>
+          </li>
+          <li class="road-item road-goal reveal">
+            <span class="road-dot" aria-hidden="true"></span>
+            <div class="road-body">
+              <div class="road-meta"><span class="ver-chip">v1.0.0</span></div>
+              <h3 data-i18n="road.goal.t">Termdock 1.0</h3>
+              <p data-i18n="road.goal.d">Tagged once the stabilization period ends, with what 1.0 promises (stored data, settings, backup format) written down in the README and changelog.</p>
+            </div>
+          </li>
+        </ol>
+        <a class="link-arrow" href="https://github.com/LuuckA21/termdock/milestone/1" rel="noopener" data-i18n="road.more">Follow the milestone on GitHub</a>
       </div>
     </section>
 

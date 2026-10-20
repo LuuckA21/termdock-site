@@ -12,6 +12,7 @@ Statico e senza dipendenze: HTML, CSS e JavaScript puri in [`site/`](site), ness
 - Le combinazioni di colori del terminale (le stesse dell'app), che cambiano la demo in tempo reale.
 - L'elenco delle scorciatoie da tastiera, che si illumina quando premi la combinazione.
 - Pulsanti di download per il sistema del visitatore, collegati ai file dell'ultima release su GitHub.
+- La roadmap verso la 1.0, dalla [milestone 1.0](https://github.com/LuuckA21/termdock/milestone/1) di Termdock: i testi sono nella pagina in entrambe le lingue, ogni voce porta alla sua issue e le issue chiuse vengono segnate come fatte a runtime.
 - Inglese e italiano, tema scuro e chiaro (di default seguono il browser e vengono ricordati una volta scelti).
 
 ## Struttura
@@ -44,11 +45,12 @@ Prima del push esegui `node scripts/check.mjs` (Node.js 22+): verifica che gli s
 - **Testi**: cambia il testo inglese in `index.html` e quello italiano con la stessa chiave `data-i18n` in `i18n.js`. Un testo con markup (`<kbd>`, `<code>`) mantiene lo stesso markup in entrambe le lingue.
 - **Nuovi testi**: dai all'elemento un nuovo `data-i18n="sezione.chiave"` e aggiungi la chiave a `i18n.js`; `check.mjs` fallisce se una chiave manca o non è usata.
 - **Versione e download** arrivano a runtime dall'API di GitHub (`releases/latest`), quindi una nuova release di Termdock non richiede modifiche qui. La versione scritta nell'HTML serve solo quando l'API non è raggiungibile (limite di richieste, offline); i pulsanti allora puntano alla pagina delle release.
+- **Roadmap**: un `<li class="road-item" data-issue="N">` per ogni issue della milestone 1.0, con i suoi testi `road.*` in entrambe le lingue. Quando una issue entra o esce dalla milestone, aggiungi o togli la sua voce; dall'API arriva solo lo stato di completamento.
 - **Screenshot e icona** sono copie di `docs/screenshot.png` e `assets/icon.svg` del repository di Termdock.
 
 ## Privacy e sicurezza
 
-- Nessun cookie, nessuna statistica, nessun font o script di terze parti. L'unica richiesta esterna è verso `api.github.com` per l'ultima release e il numero di stelle (in cache per 10 minuti nella sessione).
+- Nessun cookie, nessuna statistica, nessun font o script di terze parti. L'unica richiesta esterna è verso `api.github.com` per l'ultima release, il numero di stelle e lo stato delle issue della milestone 1.0 (in cache per 10 minuti nella sessione).
 - Una Content-Security-Policy rigorosa (`script-src 'self'`, `style-src 'self'`, `connect-src https://api.github.com`) vieta script inline e attributi `style` inline; gli stili dinamici passano dal CSSOM.
 - Le preferenze (lingua, tema, schema del terminale) restano solo nel `localStorage` del browser.
 - Le action dei workflow sono fissate a commit SHA.
