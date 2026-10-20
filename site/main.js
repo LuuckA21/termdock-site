@@ -434,9 +434,9 @@
       { cmd: "git log --oneline -3" },
       {
         out: [
+          [["t-yellow", "616ada0"], ["", " QoL 0.19.0: duplicate connection, clear terminal, close others/right, open group, paste preview, copy on select"]],
           [["t-yellow", "5f57714"], ["", " Tab and window comforts (0.18.0)"]],
           [["t-yellow", "4aaf17b"], ["", " SSH key generation and install on servers (0.17.0)"]],
-          [["t-yellow", "d40b8be"], ["", " Automatic reconnection, log wrap fix, macOS quarantine (0.16.0)"]],
         ],
       },
       { cmd: "echo $SHELL" },

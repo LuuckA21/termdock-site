@@ -1551,6 +1551,18 @@ kbd {
   color: var(--app-dim);
 }
 
+.mg-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mg-group .i {
+  width: 14px;
+  height: 14px;
+  color: var(--star);
+}
+
 .mg-row {
   display: flex;
   align-items: center;
