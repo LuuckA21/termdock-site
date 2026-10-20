@@ -15,7 +15,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Tavolozza comandi e server di produzione in rosso",
+    "hero.news": "L'import dei backup mostra ogni programma locale che avvierebbe",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Cuore in Rust, SSH in puro Rust.",
@@ -180,7 +180,7 @@ window.TD_I18N = {
     "faq.q5": "Sostituisce PuTTY o Windows Terminal?",
     "faq.a5": "Fa entrambi i lavori: un terminale moderno per le shell locali (PowerShell, cmd, WSL, Git Bash, bash, zsh…) e un gestore di connessioni SSH con preferiti, SFTP, tunnel e jump host, nella stessa finestra.",
     "faq.q6": "Posso portare la mia configurazione su un altro computer?",
-    "faq.a6": "Sì. Impostazioni → Generale → <em>Esporta…</em> salva connessioni, preferiti, layout, snippet e impostazioni in un file JSON; sull'altro computer <em>Importa…</em> mostra cosa contiene il backup, poi aggiunge solo ciò che è nuovo oppure sostituisce la configurazione attuale. Password, chiavi e chiavi host non sono mai incluse, quindi lì le inserisci di nuovo.",
+    "faq.a6": "Sì. Impostazioni → Generale → <em>Esporta…</em> salva connessioni, preferiti, layout, snippet e impostazioni in un file JSON; sull'altro computer <em>Importa…</em> mostra cosa contiene il backup (comandi iniziali e programmi locali per intero), poi aggiunge solo ciò che è nuovo oppure sostituisce la configurazione attuale. Password, chiavi e chiavi host non sono mai incluse, quindi lì le inserisci di nuovo.",
 
     "final.title": "Ormeggia i tuoi server.",
     "final.text": "Configura i preferiti una volta sola: da lì ogni connessione è a un clic.",
