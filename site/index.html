@@ -70,8 +70,8 @@
     <!-- ───────────── Hero ───────────── -->
     <section class="hero" id="top">
       <a class="pill-news reveal" href="https://github.com/LuuckA21/termdock/releases/latest" rel="noopener" id="news-pill">
-        <span class="pill-tag" id="news-version">v0.19</span>
-        <span data-i18n="hero.news">Open a whole group at once, copy on select</span>
+        <span class="pill-tag" id="news-version">v0.20</span>
+        <span data-i18n="hero.news">Command palette and production servers in red</span>
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
@@ -93,7 +93,7 @@
         </a>
       </div>
       <p class="hero-meta reveal">
-        <span id="hero-version">v0.19.0</span>
+        <span id="hero-version">v0.20.0</span>
         <span class="dot"></span><span data-i18n="hero.meta1">Free &amp; open source</span>
         <span class="dot"></span><span>MIT</span>
         <span class="dot"></span><span>Windows · macOS · Linux</span>
@@ -260,7 +260,7 @@
           <div class="viz viz-manager" aria-hidden="true">
             <div class="mg-search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>prod</div>
             <div class="mg-group">Production<svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <div class="mg-row"><span class="led c-red"></span>prod-web-01<em>deploy@10.0.1.21</em><b class="on">★</b></div>
+            <div class="mg-row"><span class="led c-red"></span>prod-web-01<i class="prod">PROD</i><em>deploy@10.0.1.21</em><b class="on">★</b></div>
             <div class="mg-row"><span class="led c-yellow"></span>db-primary<em>postgres@10.0.4.12</em><b class="on">★</b></div>
             <div class="mg-row"><span class="led c-blue"></span>prod-worker-02<em>deploy@10.0.1.34</em><b>★</b></div>
           </div>
@@ -294,10 +294,13 @@
         <li><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><div><strong data-i18n="m.copy.t">PuTTY-style copy &amp; paste</strong><span data-i18n="m.copy.d">Right click copies the selection, or pastes when nothing is selected; copy on select is one switch away.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3M12 15h5"/></svg><div><strong data-i18n="m.term.t">A complete terminal</strong><span data-i18n="m.term.d">xterm-256color, truecolor, Unicode and resizing, over SSH too.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg><div><strong data-i18n="m.auth.t">Every way to log in</strong><span data-i18n="m.auth.d">SSH agent, private keys (encrypted too), password, keyboard-interactive and 2FA.</span></div></li>
-        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M6 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><circle cx="18" cy="4" r="2"/></svg><div><strong data-i18n="m.tabs.t">Tabs your way</strong><span data-i18n="m.tabs.d">Rename, drag, duplicate, clear, close the others in one go; a dot or a bell tells you when a hidden tab has news.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M6 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><circle cx="18" cy="4" r="2"/></svg><div><strong data-i18n="m.tabs.t">Tabs your way</strong><span data-i18n="m.tabs.d">Rename, drag, duplicate, clear, close the others in one go; a dot, a bell or an optional system notification tells you when a hidden tab has news.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><div><strong data-i18n="m.confirm.t">No accidental closing</strong><span data-i18n="m.confirm.d">Closing a tab, a pane or the app with open SSH connections asks first.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg><div><strong data-i18n="m.window.t">Right where you left it</strong><span data-i18n="m.window.d">The window opens again with its last size and position.</span></div></li>
         <li><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6M11 8v6"/></svg><div><strong data-i18n="m.zoom.t">Zoom</strong><span data-i18n="m.zoom.d"><kbd>Ctrl</kbd> + <kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd> changes or resets the font size.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/><circle cx="16" cy="15" r="2"/></svg><div><strong data-i18n="m.palette.t">Command palette</strong><span data-i18n="m.palette.d"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>A</kbd>: actions, tabs, connections, layouts and snippets in one search.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><div><strong data-i18n="m.links.t">Clickable web links</strong><span data-i18n="m.links.d"><kbd>Ctrl</kbd>+click opens them, after a confirmation that shows where they go.</span></div></li>
+        <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/></svg><div><strong data-i18n="m.prod.t">Production servers in red</strong><span data-i18n="m.prod.d">A tab badge and a red terminal border, plus a startup command per connection (e.g. <code>cd /var/www</code>).</span></div></li>
       </ul>
     </section>
 
@@ -352,7 +355,7 @@
         <article class="mini-card spot reveal">
           <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
           <h3 data-i18n="sc.chan.t">The server can't reach back</h3>
-          <p data-i18n="sc.chan.d">Channels the server tries to open on its own (X11, agent, sessions, direct connections) are refused, links it prints in the terminal are never opened, and downloaded files are marked so SmartScreen or Gatekeeper checks them before they run.</p>
+          <p data-i18n="sc.chan.d">Channels the server tries to open on its own (X11, agent, sessions, direct connections) are refused, web links it prints open only on <kbd>Ctrl</kbd>+click after a confirmation that shows where they really go, and downloaded files are marked so SmartScreen or Gatekeeper checks them before they run.</p>
         </article>
         <article class="mini-card spot reveal">
           <svg class="i" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
@@ -386,6 +389,8 @@
         <div class="key-row" data-combo="ctrl+shift+w"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>W</kbd></span><span data-i18n="k.w">Close pane</span></div>
         <div class="key-row" data-combo="ctrl+tab"><span class="combo"><kbd>Ctrl</kbd><kbd>Tab</kbd></span><span data-i18n="k.next">Next tab</span></div>
         <div class="key-row" data-combo="ctrl+zoom"><span class="combo"><kbd>Ctrl</kbd><kbd>+</kbd><kbd>-</kbd><kbd>0</kbd></span><span data-i18n="k.zoom">Font size</span></div>
+        <div class="key-row" data-combo="ctrl+shift+a"><span class="combo"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>A</kbd></span><span data-i18n="k.a">Command palette</span></div>
+        <div class="key-row" data-combo="ctrl+click"><span class="combo"><kbd>Ctrl</kbd><kbd>click</kbd></span><span data-i18n="k.click">Open a web link</span></div>
         <div class="key-row" data-combo="ctrl+comma"><span class="combo"><kbd>Ctrl</kbd><kbd>,</kbd></span><span data-i18n="k.set">Settings</span></div>
       </div>
       <p class="note reveal" data-i18n="keys.note">On macOS <kbd>Cmd</kbd> works in place of <kbd>Ctrl</kbd>, and <em>Go to tab N</em> is <kbd>Cmd</kbd><kbd>1…9</kbd>.</p>
@@ -396,7 +401,7 @@
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">Download</p>
         <h2 data-i18n="dl.title">Get Termdock</h2>
-        <p class="lead"><span data-i18n="dl.lead">Free, open source, with signed in-app updates.</span> <span class="ver-chip" id="dl-version">v0.19.0</span></p>
+        <p class="lead"><span data-i18n="dl.lead">Free, open source, with signed in-app updates.</span> <span class="ver-chip" id="dl-version">v0.20.0</span></p>
       </header>
 
       <div class="dl-grid">
