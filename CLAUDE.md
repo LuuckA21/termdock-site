@@ -43,7 +43,11 @@ Published to GitHub Pages by `.github/workflows/pages.yml` on every push to
 
 Version and download links come from the GitHub API at runtime, so a release
 needs a site change only when it brings something worth describing. Read the
-release's section in Termdock's `CHANGELOG.md`, then update as needed:
+release's section in Termdock's `CHANGELOG.md` and **always check Termdock's
+`FEATURES.md` and `FEATURES.it.md`** (the ranked list of every feature): each
+entry there must be on the page, in English and Italian, and the Italian page
+should use the same wording as `FEATURES.it.md` where it fits. Then update as
+needed:
 
 - the fallback version (`#news-version`, `#hero-version`, `#dl-version`) and
   the news pill text (`hero.news`);

@@ -14,7 +14,7 @@ window.TD_I18N = {
     "nav.lang": "Cambia lingua",
     "nav.theme": "Alterna tema chiaro e scuro",
 
-    "hero.news": "Schede più comode e generazione delle chiavi SSH",
+    "hero.news": "Apri un gruppo intero in un colpo, copia alla selezione",
     "hero.title1": "I server che usi ogni giorno,",
     "hero.title2": "a un clic di distanza.",
     "hero.sub": "Un terminale e gestore di connessioni SSH veloce e sicuro per Windows, macOS e Linux. Fissa le connessioni nella barra dei preferiti, dividi i pannelli, sfoglia i file via SFTP, passa attraverso i bastion. Cuore in Rust, SSH in puro Rust.",
@@ -47,7 +47,7 @@ window.TD_I18N = {
     "f.themes.group": "Combinazione di colori del terminale",
 
     "f.manager.title": "Gestione connessioni",
-    "f.manager.text": "Tutti i server in gruppi, con colori e ricerca; una stella li fissa nella barra dei preferiti. Si apre con <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>M</kbd>.",
+    "f.manager.text": "Tutti i server in gruppi, con colori e ricerca; una stella li fissa nella barra dei preferiti. Duplica una connessione per partire da una simile, o apri un gruppo intero, una scheda ciascuna. La gestione si apre con <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>M</kbd>.",
     "f.keys.title": "Chiavi SSH, create e installate",
     "f.keys.text": "Genera una chiave Ed25519 con passphrase (un file esistente non viene mai sostituito), poi installa la chiave pubblica sul server, come <code>ssh-copy-id</code>.",
 
@@ -74,14 +74,14 @@ window.TD_I18N = {
     "m.log.t": "Log della sessione",
     "m.log.d": "Spento finché non lo avvii: ciò che mostra un terminale va in un file di testo leggibile solo da te, senza colori.",
     "m.copy.t": "Copia e incolla come PuTTY",
-    "m.copy.d": "Il tasto destro copia la selezione, o incolla se non c'è niente di selezionato.",
+    "m.copy.d": "Il tasto destro copia la selezione, o incolla se non c'è niente di selezionato; la copia alla selezione si attiva con un interruttore.",
 
     "m.term.t": "Un terminale completo",
     "m.term.d": "xterm-256color, truecolor, Unicode e ridimensionamento, anche via SSH.",
     "m.auth.t": "Tutti i modi di accedere",
     "m.auth.d": "SSH agent, chiavi private (anche cifrate), password, keyboard-interactive e 2FA.",
     "m.tabs.t": "Schede a modo tuo",
-    "m.tabs.d": "Rinominale, trascinale e duplicale; un punto o una campanella ti dicono quando una scheda nascosta ha novità.",
+    "m.tabs.d": "Rinominale, trascinale, duplicale, puliscile, chiudi le altre in un colpo; un punto o una campanella ti dicono quando una scheda nascosta ha novità.",
     "m.confirm.t": "Niente chiusure per sbaglio",
     "m.confirm.d": "Chiudere una scheda, un pannello o l'app con connessioni SSH aperte chiede prima conferma.",
     "m.window.t": "Dove l'avevi lasciata",
@@ -106,7 +106,7 @@ window.TD_I18N = {
     "sc.chan.t": "Niente iniziative dal server",
     "sc.chan.d": "I canali che il server prova ad aprire di sua iniziativa (X11, agent, sessioni, connessioni dirette) vengono rifiutati, i link che stampa nel terminale non vengono mai aperti e i file scaricati sono marcati, così SmartScreen o Gatekeeper li controllano prima che vengano eseguiti.",
     "sc.paste.t": "Incolla sicuro, richieste al momento giusto",
-    "sc.paste.d": "Il testo incollato perde i caratteri di controllo, incollare più righe chiede prima conferma, e la richiesta di password di una scheda in background aspetta che tu la guardi.",
+    "sc.paste.d": "Il testo incollato perde i caratteri di controllo, più righe compaiono prima in anteprima con i caratteri invisibili segnalati, e la richiesta di password di una scheda in background aspetta che tu la guardi.",
 
     "keys.eyebrow": "Prima la tastiera",
     "keys.title": "Le mani restano sui tasti.",
