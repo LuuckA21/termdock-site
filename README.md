@@ -12,6 +12,7 @@ Static and dependency-free: plain HTML, CSS and JavaScript in [`site/`](site), n
 - Terminal colour schemes (the same palettes as the app) that restyle the demo live.
 - Keyboard shortcut list that lights up when the combination is pressed.
 - Download buttons for the visitor's system, linked to the assets of the latest GitHub release.
+- The roadmap to 1.0, from Termdock's [1.0 milestone](https://github.com/LuuckA21/termdock/milestone/1): the texts are on the page in both languages, each item links to its issue, and closed issues are marked as done at runtime.
 - English and Italian, dark and light theme (both follow the browser by default and are remembered once chosen).
 
 ## Structure
@@ -44,11 +45,12 @@ Before pushing run `node scripts/check.mjs` (Node.js 22+): it parses the scripts
 - **Text**: change the English text in `index.html` and the Italian one under the same `data-i18n` key in `i18n.js`. A text with markup (`<kbd>`, `<code>`) keeps the same markup in both languages.
 - **New text**: give the element a new `data-i18n="section.key"` and add the key to `i18n.js`; `check.mjs` fails if a key is missing or unused.
 - **Version and downloads** come from the GitHub API (`releases/latest`) at runtime, so a new Termdock release needs no change here. The version written in the HTML is only the fallback when the API is unreachable (rate limit, offline); buttons then point to the releases page.
+- **Roadmap**: one `<li class="road-item" data-issue="N">` per issue of the 1.0 milestone, with its `road.*` texts in both languages. When an issue joins or leaves the milestone, add or remove its item; only its done state comes from the API.
 - **Screenshot and icon** are copies of `docs/screenshot.png` and `assets/icon.svg` from the Termdock repository.
 
 ## Privacy and security
 
-- No cookies, no analytics, no third-party fonts or scripts. The only external request is to `api.github.com` for the latest release and the star count (cached for 10 minutes in the session).
+- No cookies, no analytics, no third-party fonts or scripts. The only external request is to `api.github.com` for the latest release, the star count and the state of the 1.0 milestone's issues (cached for 10 minutes in the session).
 - A strict Content-Security-Policy (`script-src 'self'`, `style-src 'self'`, `connect-src https://api.github.com`) forbids inline scripts and inline `style` attributes; dynamic styles are set through the CSSOM.
 - Preferences (language, theme, terminal scheme) are kept only in the browser's `localStorage`.
 - Workflow actions are pinned to commit SHAs.

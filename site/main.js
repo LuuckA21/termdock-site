@@ -73,6 +73,7 @@
     });
     document.title = next === "it" ? "Termdock: terminale e gestore di connessioni SSH" : "Termdock: terminal & SSH connection manager";
     updateDownloadLabel();
+    renderRoadmap();
     renderTabs();
     $$(".scheme").forEach((b) => b.setAttribute("title", `${rt("scheme")}: ${b.dataset.name}`));
   }
@@ -282,6 +283,40 @@
     }
   }
 
+  // ───────────── Roadmap ─────────────
+
+  /** State labels and progress, from the data-* set by loadRoadmap (also on a language switch). */
+  function renderRoadmap() {
+    $$(".road-item[data-issue]").forEach((item) => {
+      $(".road-state", item).textContent = rt(item.dataset.state === "done" ? "roadDone" : "roadPlanned");
+    });
+    const progress = $("#road-progress");
+    if (progress.hidden) return;
+    const { done, total } = progress.dataset;
+    $("#road-count").textContent = rt("roadProgress", { done, total });
+  }
+
+  /** Marks closed issues of the 1.0 milestone as done; the page keeps "Planned" without the API. */
+  async function loadRoadmap() {
+    const issues = await cachedJSON("td-roadmap", `https://api.github.com/repos/${REPO}/issues?milestone=1&state=all&per_page=100`);
+    if (!Array.isArray(issues)) return;
+    const list = issues.filter((i) => !i.pull_request);
+    const closed = new Set(list.filter((i) => i.state === "closed").map((i) => Number(i.number)));
+    $$(".road-item[data-issue]").forEach((item) => {
+      item.dataset.state = closed.has(Number(item.dataset.issue)) ? "done" : "planned";
+    });
+    if (list.length) {
+      const progress = $("#road-progress");
+      progress.dataset.done = String(closed.size);
+      progress.dataset.total = String(list.length);
+      $("#road-fill").style.setProperty("--p", String(closed.size / list.length));
+      progress.hidden = false;
+    }
+    renderRoadmap();
+  }
+
+  renderRoadmap();
+  loadRoadmap().catch(() => {});
   loadRelease().catch((e) => console.info("release info unavailable:", e.message));
   loadStars().catch(() => {});
 

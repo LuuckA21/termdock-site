@@ -9,6 +9,7 @@ window.TD_I18N = {
     "nav.features": "Funzioni",
     "nav.security": "Sicurezza",
     "nav.shortcuts": "Scorciatoie",
+    "nav.roadmap": "Roadmap",
     "nav.faq": "FAQ",
     "nav.download": "Scarica",
     "nav.lang": "Cambia lingua",
@@ -150,6 +151,23 @@ window.TD_I18N = {
     "dl.all": "Tutte le release e le firme",
     "copy": "Copia i comandi",
 
+    "road.eyebrow": "Roadmap",
+    "road.title": "La strada verso la 1.0.",
+    "road.lead": "Cosa deve arrivare prima di Termdock 1.0, seguito apertamente come milestone su GitHub. Altre idee possono ancora arrivare nella 1.x.",
+    "road.sign.t": "Build firmate su macOS e Windows",
+    "road.sign.d": "Firma Developer ID e notarizzazione su macOS, firma Authenticode su Windows, così Gatekeeper e SmartScreen non avvisano più al primo avvio.",
+    "road.arm.t": "Pacchetti ARM per Windows e Linux",
+    "road.arm.d": "Installer nativi per i portatili Windows su ARM, e AppImage, <code>.deb</code> e <code>.rpm</code> per Linux su ARM come il Raspberry Pi, con gli aggiornamenti dall'app su entrambi.",
+    "road.fido.t": "Chiavi di sicurezza FIDO",
+    "road.fido.d": "Accesso con chiavi <code>ed25519-sk</code> ed <code>ecdsa-sk</code> su una YubiKey o simili, da file o dall'agent, con un messaggio chiaro quando la chiave va toccata.",
+    "road.compat.t": "Dati salvati che non si rompono mai",
+    "road.compat.d": "Test che caricano connessioni, impostazioni e backup scritti dalle versioni precedenti, così ogni aggiornamento mantiene la tua configurazione com'era.",
+    "road.rc.t": "Un periodo di stabilizzazione con soli fix",
+    "road.rc.d": "Una release candidate con le funzioni congelate, usata ogni giorno su Windows, macOS e Linux per qualche settimana, con sole release di correzione finché non resta aperto nessun bug bloccante.",
+    "road.goal.t": "Termdock 1.0",
+    "road.goal.d": "Pubblicata quando finisce il periodo di stabilizzazione, con quello che la 1.0 promette (dati salvati, impostazioni, formato dei backup) scritto nel README e nel changelog.",
+    "road.more": "Segui la milestone su GitHub",
+
     "faq.title": "Buone domande.",
     "faq.q1": "Termdock è davvero gratuito?",
     "faq.a1": "Sì. È open source con licenza MIT, senza account da creare e senza versioni a pagamento. Se ti fa risparmiare tempo, puoi sostenerne lo sviluppo su <a href=\"https://ko-fi.com/luucka21\" rel=\"noopener\">Ko-fi</a>.",
@@ -195,7 +213,10 @@ window.TD_I18N = {
       closed: "Connection closed. Press Enter to reconnect.",
       close: "Close tab",
       newTab: "New tab",
-      scheme: "Scheme"
+      scheme: "Scheme",
+      roadPlanned: "Planned",
+      roadDone: "Done",
+      roadProgress: "{done} of {total} done"
     },
     it: {
       downloadFor: "Scarica per {os}",
@@ -212,7 +233,10 @@ window.TD_I18N = {
       closed: "Connessione chiusa. Premi Invio per riconnetterti.",
       close: "Chiudi scheda",
       newTab: "Nuova scheda",
-      scheme: "Schema"
+      scheme: "Schema",
+      roadPlanned: "In programma",
+      roadDone: "Fatto",
+      roadProgress: "{done} su {total} completate"
     }
   }
 };
